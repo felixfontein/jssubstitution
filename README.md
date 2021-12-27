@@ -1,4 +1,5 @@
 # Substitution Cipher Workbench
+[![CI](https://github.com/felixfontein/jssubstitution/workflows/Test%20Angular%20app/badge.svg?event=push)](https://github.com/felixfontein/jssubstitution/actions)
 
 ## Development server
 
