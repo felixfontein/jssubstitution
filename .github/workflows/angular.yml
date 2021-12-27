@@ -22,9 +22,9 @@ jobs:
         run: npm ci
 
       - name: Lint
-        run: npm lint
+        run: ng lint
 
-  test:
+  unit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -36,5 +36,5 @@ jobs:
       - name: Setup
         run: npm ci
 
-      - name: Lint
+      - name: Run unit tests
         run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
