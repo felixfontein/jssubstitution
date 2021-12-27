@@ -1,0 +1,53 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.letter {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  border: 0.1em solid white;
+  margin: 0;
+  padding: 0;
+
+  &:hover, &:focus, &:focus-visible {
+    border-color: black;
+    outline: none;
+  }
+
+  // Remove some browser-specific formatting
+  background: none;
+  outline: none;
+  font: unset;
+  &:focus { outline: none; }
+  &::-moz-focus-inner { border: 0; }
+
+  .bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #BBB;
+  }
+
+  .input, .output, .percentage {
+    text-align: center;
+
+    z-index: 1;
+
+    width: 4em;
+    height: 1.5em;
+    line-height: 1.5em;
+
+    color: black;
+    text-shadow: 0px 0px 2px white;
+  }
+
+  .input {
+    font-weight: bold;
+  }
+}

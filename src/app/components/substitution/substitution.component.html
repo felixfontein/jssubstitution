@@ -1,0 +1,6 @@
+<app-substitution-stats [letters]="(letters | async) || []"></app-substitution-stats>
+
+<div class="letters">
+  <app-substitution-letter [letter]="letter" *ngFor="let letter of this.letters | async" tabindex="0" aria-role="button">
+  </app-substitution-letter>
+</div>

@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  margin: 0;
+  padding: 0.1em;
+
+  &:hover, &:focus, &:focus-visible {
+    background-color: black;
+    outline: none;
+  }
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2em;
+  height: 1.5em;
+  line-height: 1.5em;
+}
+
+.input {
+  color: black;
+  background-color: white;
+}
+
+.output {
+  color: white;
+  background-color: black;
+
+  &.empty {
+
+  }
+}

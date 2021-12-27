@@ -1,0 +1,8 @@
+<button class="letter"
+        (click)="this.substitution.modifySubstitution(frequency.letter)"
+        *ngFor="let frequency of this.frequencies | async">
+  <div class="bar" [style.height]="(frequency.frequency / this.maxFrequency * 100) + '%'"></div>
+  <div class="input">{{ frequency.letter | displayLetter }}</div>
+  <div class="percentage">{{ (frequency.frequency * 100) | number : '1.0-2' }}%</div>
+  <div class="output">{{ this.substitution.getObservable(frequency.letter) | async | displayLetter }}</div>
+</button>
