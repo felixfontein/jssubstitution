@@ -1,0 +1,19 @@
+<div class="title">
+  Select replacement for {{ this.letter }}
+</div>
+<div class="content">
+  <div class="letters">
+    <button *ngFor="let letter of letters"
+            [class.primary]="letter === this.currentLetter"
+            [class.secondary]="letter !== this.currentLetter"
+            [class.used]="isInUse(letter) | async"
+            [mat-dialog-close]
+            (click)="selectLetter(letter)">
+      <ng-container *ngIf="letter !== undefined">{{ letter | displayLetter }}</ng-container>
+      <ng-container *ngIf="letter === undefined">Nothing</ng-container>
+    </button>
+  </div>
+</div>
+<div class="bottom">
+  <button class="secondary" [mat-dialog-close] cdkFocusInitial>Cancel</button>
+</div>

@@ -1,0 +1,32 @@
+:host {
+  min-width: 50vw;
+  max-width: 50em;
+}
+
+.letters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  button {
+    margin: 0.1em;
+    height: 1.5em;
+    line-height: 1.5em;
+    min-width: 2em;
+
+    &.used {
+      color: red;
+      cursor: not-allowed;
+    }
+
+    &.primary {
+      font-weight: bold;
+    }
+
+    &.used.primary {
+      background-color: red;
+      color: white;
+    }
+  }
+}

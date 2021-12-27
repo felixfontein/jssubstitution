@@ -1,7 +1,10 @@
 
 import { Injectable } from '@angular/core';
+import { MatDialog, MatDialogConfig, MatDialogRef  } from '@angular/material/dialog';
 
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
+import { LetterSelectorComponent, LetterSelectorData } from '../components/letter-selector/letter-selector.component';
 
 import { EMPTY_SUBSTITUTION, Substitution } from '../utils/substitution';
 
@@ -52,7 +55,7 @@ export class SubstitutionService {
   private readonly letters: Map<string, LetterData>;
   private readonly splitters: Map<string, SplitData>;
 
-  constructor() {
+  constructor(private readonly matDialogService: MatDialog) {
     this.substitution$ = new BehaviorSubject<Substitution>(EMPTY_SUBSTITUTION);
     this.substitution = this.substitution$.asObservable();
     this.letters = new Map<string, LetterData>();
@@ -73,6 +76,7 @@ export class SubstitutionService {
     let result = this.letters.get(letter);
     if (!result) {
       result = new LetterData();
+      result.update(this.substitution$.getValue().letterObservablesMap.get(letter));
       this.letters.set(letter, result);
     }
     return result;
@@ -100,7 +104,17 @@ export class SubstitutionService {
   }
 
   public modifySubstitution(letter: string): void {
-    // TODO
-    console.log(`TODO: edit ${letter}`);
+    const config: MatDialogConfig = {
+      role: 'dialog',
+      restoreFocus: true,
+    };
+    config.data = <LetterSelectorData>{
+      letter: letter,
+    };
+    this.matDialogService.open(LetterSelectorComponent, config);
+  }
+
+  public getCurrent(): Substitution {
+    return this.substitution$.getValue();
   }
 }

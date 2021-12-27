@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+* {
+  box-sizing: content-box;
+}
+
+button {
+  // Remove some browser-specific formatting
+  background: none;
+  outline: none;
+  font: unset;
+  &:focus { outline: none; }
+  &::-moz-focus-inner { border: 0; }
+}
+
+mat-dialog-container {
+  > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+
+    .title {
+      text-align: center;
+      font-size: x-large;
+      padding: 0 0 1em;
+    }
+
+    .content {
+
+    }
+
+    .bottom {
+      padding: 2em 0 0;
+      text-align: center;
+    }
+
+    button {
+      border: 0.2em solid transparent;
+
+      cursor: pointer;
+
+      &:focus, &:active {
+        border-color: black;
+      }
+
+      &.primary {
+        color: white;
+        background-color: black;
+
+        &:hover {
+          background-color: #222;
+        }
+      }
+
+      &.secondary {
+        color: black;
+        background-color: white;
+        border-color: black;
+
+        &:focus, &:active {
+          outline: black;
+        }
+
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+}

@@ -18,13 +18,6 @@
     outline: none;
   }
 
-  // Remove some browser-specific formatting
-  background: none;
-  outline: none;
-  font: unset;
-  &:focus { outline: none; }
-  &::-moz-focus-inner { border: 0; }
-
   .bar {
     position: absolute;
     left: 0;
