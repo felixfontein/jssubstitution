@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LetterSelectorComponent } from './letter-selector.component';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { AppStateService } from '../../services/app-state.service';
+import { TranslocoRootModule } from '../../transloco-root.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('LetterSelectorComponent', () => {
   let component: LetterSelectorComponent;
@@ -15,7 +17,7 @@ describe('LetterSelectorComponent', () => {
         AppStateService,
         { provide: MAT_DIALOG_DATA, useValue: {} },
       ],
-      imports: [ MatDialogModule ],
+      imports: [ MatDialogModule, TranslocoRootModule, HttpClientModule ],
     })
     .compileComponents();
   });
