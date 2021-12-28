@@ -1,4 +1,6 @@
+import { Injectable, NgModule } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import {
   getBrowserLang,
   TRANSLOCO_LOADER,
@@ -8,7 +10,7 @@ import {
   translocoConfig,
   TranslocoModule,
 } from '@ngneat/transloco';
-import { Injectable, NgModule } from '@angular/core';
+import { TranslocoLocaleModule } from '@ngneat/transloco-locale';
 
 import { environment } from '../environments/environment';
 
@@ -25,17 +27,41 @@ export class TranslocoHttpLoader implements TranslocoLoader {
 const AVAILABLE_LANGS = ['en', 'de'];
 
 
+function isValidLanguage(language: string | null | undefined): language is string {
+  return !!language && AVAILABLE_LANGS.indexOf(language) >= 0;
+}
+
+
 function pickDefaultLanguage(): string {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const language = params.get('lang');
+    if (isValidLanguage(language)) {
+      return language;
+    }
+  } catch (e) {
+    // ignore
+  }
+
   const language = getBrowserLang();
-  if (language && AVAILABLE_LANGS.indexOf(language) >= 0) {
+  if (isValidLanguage(language)) {
     return language;
   }
+
   return 'en';
 }
 
 
 @NgModule({
-  exports: [ TranslocoModule ],
+  exports: [ TranslocoModule, TranslocoLocaleModule ],
+  imports: [
+    TranslocoLocaleModule.forRoot({
+      langToLocaleMapping: {
+        en: 'en-US',
+        de: 'de-DE',
+      },
+    })
+  ],
   providers: [
     {
       provide: TRANSLOCO_CONFIG,
