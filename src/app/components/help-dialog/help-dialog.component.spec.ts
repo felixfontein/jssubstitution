@@ -1,21 +1,26 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LetterSelectorComponent } from './letter-selector.component';
-import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { HelpData, HelpDialogComponent } from './help-dialog.component';
 import { AppStateService } from '../../services/app-state.service';
+import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { TranslocoRootModule } from '../../transloco-root.module';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('LetterSelectorComponent', () => {
-  let component: LetterSelectorComponent;
-  let fixture: ComponentFixture<LetterSelectorComponent>;
+const EMPTY_HELP: HelpData = {
+  title: 'HELP.MAIN.TITLE',
+  pages: [],
+};
+
+describe('HelpDialogComponent', () => {
+  let component: HelpDialogComponent;
+  let fixture: ComponentFixture<HelpDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LetterSelectorComponent ],
+      declarations: [ HelpDialogComponent ],
       providers: [
         AppStateService,
-        { provide: MAT_DIALOG_DATA, useValue: {letter: 'A'} },
+        { provide: MAT_DIALOG_DATA, useValue: EMPTY_HELP },
       ],
       imports: [ MatDialogModule, TranslocoRootModule, HttpClientModule ],
     })
@@ -23,7 +28,7 @@ describe('LetterSelectorComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LetterSelectorComponent);
+    fixture = TestBed.createComponent(HelpDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

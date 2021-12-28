@@ -1,0 +1,25 @@
+<div class="content">
+    <div class="title">
+        {{ this.params.title | transloco }}
+    </div>
+    <div class="navigation" *ngIf="this.params.pages.length > 1">
+        <button class="secondary prev" (click)="prevPage()" [disabled]="!hasPrevPage">«</button>
+        <span>{{ this.page + 1 }} / {{ this.params.pages.length }}</span>
+        <button class="secondary next" (click)="nextPage()" [disabled]="!hasNextPage">»</button>
+    </div>
+    <div class="page" *ngFor="let helpPage of this.params.pages; let pageIndex = index">
+        <ng-container *ngIf="this.page === pageIndex">
+            <p *ngFor="let paragraph of helpPage.paragraphs">
+                {{ paragraph | transloco }}
+            </p>
+        </ng-container>
+    </div>
+    <div class="navigation" *ngIf="this.params.pages.length > 1">
+        <button class="secondary prev" (click)="prevPage()" [disabled]="!hasPrevPage">«</button>
+        <span>{{ this.page + 1 }} / {{ this.params.pages.length }}</span>
+        <button class="secondary next" (click)="nextPage()" [disabled]="!hasNextPage">»</button>
+    </div>
+</div>
+<div class="bottom">
+    <button class="primary" [mat-dialog-close] cdkFocusInitial>{{ 'BACK' | transloco }}</button>
+</div>

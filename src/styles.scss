@@ -26,10 +26,16 @@ button {
 }
 
 mat-dialog-container {
+  &.mat-dialog-container {
+    display: flex;
+    max-height: 100vh;
+  }
+
   > * {
     display: flex;
     flex-direction: column;
     justify-content: normal;
+    max-height: 100%;
 
     .title {
       text-align: center;
@@ -38,45 +44,55 @@ mat-dialog-container {
     }
 
     .content {
-
+      flex: 0 1 auto;
+      overflow-x: visible;
+      overflow-y: auto;
     }
 
     .bottom {
+      flex: 0 0 auto;
       padding: 2em 0 0;
       text-align: center;
     }
+  }
+}
 
-    button {
-      border: 0.2em solid transparent;
+button {
+  &.primary, &.secondary {
+    border: 0.2em solid transparent;
 
-      cursor: pointer;
+    cursor: pointer;
 
-      &:focus, &:active {
-        border-color: black;
-      }
-
-      &.primary {
-        color: white;
-        background-color: black;
-
-        &:hover {
-          background-color: #222;
-        }
-      }
-
-      &.secondary {
-        color: black;
-        background-color: white;
-        border-color: black;
-
-        &:focus, &:active {
-          outline: black;
-        }
-
-        &:hover {
-          background-color: #ddd;
-        }
-      }
+    &:focus, &:active {
+      border-color: black;
     }
+  }
+
+  &.primary {
+    color: white;
+    background-color: black;
+
+    &:hover:not(:disabled) {
+      background-color: #222;
+    }
+  }
+
+  &.secondary {
+    color: black;
+    background-color: white;
+    border-color: black;
+
+    &:focus, &:active {
+      outline: black;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: #ddd;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
   }
 }

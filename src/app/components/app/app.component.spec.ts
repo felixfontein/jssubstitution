@@ -6,7 +6,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AppComponent, ],
-      imports: [ MatDialogModule, ],
+      imports: [ MatDialogModule ],
     }).compileComponents();
   }));
 

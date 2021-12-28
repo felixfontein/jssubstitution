@@ -1,7 +1,7 @@
-<div class="title">
-  {{ 'SELECT_REPLACEMENT' | transloco:{letter: this.letter} }}
-</div>
 <div class="content">
+  <div class="title">
+    {{ 'SELECT_REPLACEMENT' | transloco:{letter: this.letter} }}
+  </div>
   <div class="letters">
     <button *ngFor="let letter of letters"
             [class.primary]="letter === this.currentLetter"

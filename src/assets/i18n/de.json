@@ -1,6 +1,18 @@
 {
+  "BACK": "Zurück",
   "CANCEL": "Abbrechen",
+  "HELP": {
+    "MAIN": {
+      "TITLE": "Substitutions-Chiffre knacken!",
+      "1": {
+        "TEXT_1": "Diese App erlaubt Dir, eine Substitutions-Chiffre zu knacken.",
+        "TEXT_2": "Der angezeigte Text (schwarz auf weiss) wurde mit einer Substitutions-Chiffre verschlüsselt. Ordne den verwendeten Chiffre-Buchstaben Klartext-Buchstaben zu (weiss auf schwarz), um die Nachricht zu entschlüsseln.",
+        "TEXT_3": "Oben wird die Häufigkeit der Chiffre-Buchstaben angezeigt.",
+        "TEXT_4": "Durch Antippen eines Buchstabens in der Häufigkeitsanzeige oder im Text selber kannst Du auswählen, welcher Klartext-Buchstabe dem Chiffre-Buchstabe zugeordnet werden soll."
+      }
+    }
+  },
   "MENU": "Menü",
   "NOTHING": "Nichts",
-  "SELECT_REPLACEMENT": "Wähle Ersetzung für {{ letter }}"
+  "SELECT_REPLACEMENT": "Wähle Ersetzung für «{{ letter }}»"
 }

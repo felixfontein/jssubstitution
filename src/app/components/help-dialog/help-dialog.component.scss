@@ -1,0 +1,32 @@
+:host {
+  width: 50em;
+  max-width: 100%;
+}
+
+.navigation {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  button {
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    width: 2em;
+    height: 2em;
+    padding: 0;
+  }
+
+  span {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+.page {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
