@@ -1,5 +1,5 @@
 <div class="title">
-  Select replacement for {{ this.letter }}
+  {{ 'SELECT_REPLACEMENT' | transloco:{letter: this.letter} }}
 </div>
 <div class="content">
   <div class="letters">
@@ -10,10 +10,10 @@
             [mat-dialog-close]
             (click)="selectLetter(letter)">
       <ng-container *ngIf="letter !== undefined">{{ letter | displayLetter }}</ng-container>
-      <ng-container *ngIf="letter === undefined">Nothing</ng-container>
+      <ng-container *ngIf="letter === undefined">{{ 'NOTHING' | transloco }}</ng-container>
     </button>
   </div>
 </div>
 <div class="bottom">
-  <button class="secondary" [mat-dialog-close] cdkFocusInitial>Cancel</button>
+  <button class="secondary" [mat-dialog-close] cdkFocusInitial>{{ 'CANCEL' | transloco }}</button>
 </div>

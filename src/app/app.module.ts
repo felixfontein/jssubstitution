@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
+import { TranslocoRootModule } from './transloco-root.module';
 
 import { DisplayLetterPipe } from './pipes/display-letter.pipe';
 
@@ -26,6 +29,8 @@ import { LetterSelectorComponent } from './components/letter-selector/letter-sel
     BrowserModule,
     MatDialogModule,
     NoopAnimationsModule,
+    HttpClientModule,
+    TranslocoRootModule,
   ],
   providers: [
     SubstitutionService,
