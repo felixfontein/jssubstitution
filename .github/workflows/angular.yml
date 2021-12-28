@@ -16,12 +16,12 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
 
       - name: Setup
         run: npm ci
 
-      - name: Lint
+      - name: Build
         run: ./node_modules/.bin/ng build
 
   lint:
@@ -31,7 +31,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
 
       - name: Setup
         run: npm ci
@@ -46,7 +46,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
 
       - name: Setup
         run: npm ci
