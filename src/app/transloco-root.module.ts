@@ -10,7 +10,7 @@ import {
   translocoConfig,
   TranslocoModule,
 } from '@ngneat/transloco';
-import { TranslocoLocaleModule } from '@ngneat/transloco-locale';
+import { Locale, TranslocoLocaleModule } from '@ngneat/transloco-locale';
 
 import { environment } from '../environments/environment';
 
@@ -24,7 +24,35 @@ export class TranslocoHttpLoader implements TranslocoLoader {
 }
 
 
-const AVAILABLE_LANGS = ['en', 'de'];
+export interface Language {
+  readonly name: string;
+  readonly fullName: string;
+  readonly locale: Locale;
+}
+
+
+export const LANGUAGES: Language[] = [
+  {
+    name: 'en',
+    fullName: 'English',
+    locale: 'en-US',
+  },
+  {
+    name: 'de',
+    fullName: 'Deutsch',
+    locale: 'de-DE',
+  },
+];
+
+
+const AVAILABLE_LANGS = LANGUAGES.map(l => l.name);
+
+
+function getLangLocaleMapping(): {[label: string]: string} {
+  const result: {[label: string]: string} = {};
+  LANGUAGES.forEach(l => result[l.name] = l.locale);
+  return result;
+}
 
 
 function isValidLanguage(language: string | null | undefined): language is string {
@@ -56,10 +84,7 @@ function pickDefaultLanguage(): string {
   exports: [ TranslocoModule, TranslocoLocaleModule ],
   imports: [
     TranslocoLocaleModule.forRoot({
-      langToLocaleMapping: {
-        en: 'en-US',
-        de: 'de-DE',
-      },
+      langToLocaleMapping: getLangLocaleMapping(),
     })
   ],
   providers: [

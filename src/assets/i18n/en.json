@@ -1,5 +1,6 @@
 {
   "CANCEL": "Cancel",
+  "MENU": "Menu",
   "NOTHING": "Nothing",
   "SELECT_REPLACEMENT": "Select replacement for {{ letter }}"
 }

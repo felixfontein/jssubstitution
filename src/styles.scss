@@ -5,6 +5,17 @@
   box-sizing: content-box;
 }
 
+// The Angular Material design menu doesn't ike content-box...
+.mat-menu-content, .mat-menu-content * {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 button {
   // Remove some browser-specific formatting
   background: none;
