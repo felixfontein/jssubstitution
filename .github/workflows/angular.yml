@@ -9,6 +9,21 @@ on:
   schedule:
     - cron: '0 6 * * *'
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Setup
+        run: npm ci
+
+      - name: Lint
+        run: ./node_modules/.bin/ng build
+
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -37,4 +52,4 @@ jobs:
         run: npm ci
 
       - name: Run unit tests
-        run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+        run: ./node_modules/.bin/ng test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
