@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SubstitutionLetterComponent } from './substitution-letter.component';
 
 import { DisplayLetterPipe } from '../../pipes/display-letter.pipe';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 
 describe('SubstitutionLetterComponent', () => {
@@ -11,7 +12,8 @@ describe('SubstitutionLetterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DisplayLetterPipe, SubstitutionLetterComponent ]
+      declarations: [ DisplayLetterPipe, SubstitutionLetterComponent ],
+      imports: [ MatDialogModule ],
     })
     .compileComponents();
   }));

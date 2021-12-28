@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubstitutionComponent } from './substitution.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 describe('SubstitutionComponent', () => {
   let component: SubstitutionComponent;
@@ -8,7 +9,8 @@ describe('SubstitutionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubstitutionComponent ]
+      declarations: [ SubstitutionComponent ],
+      imports: [ MatDialogModule, ],
     })
     .compileComponents();
   }));

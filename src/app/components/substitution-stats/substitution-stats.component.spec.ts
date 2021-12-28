@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubstitutionStatsComponent } from './substitution-stats.component';
+import { DisplayLetterPipe } from '../../pipes/display-letter.pipe';
+import { MatDialogModule } from '@angular/material/dialog';
 
 describe('SubstitutionStatsComponent', () => {
   let component: SubstitutionStatsComponent;
@@ -8,7 +10,8 @@ describe('SubstitutionStatsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubstitutionStatsComponent ]
+      declarations: [ DisplayLetterPipe, SubstitutionStatsComponent ],
+      imports: [ MatDialogModule, ],
     })
     .compileComponents();
   }));
