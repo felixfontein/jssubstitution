@@ -34,9 +34,11 @@ div {
 .output {
   color: white;
   background-color: black;
+  box-sizing: border-box;
 
   &.empty {
-
+    background-color: white;
+    border: 0.2em solid black;
   }
 }
 
