@@ -1,6 +1,6 @@
-import { Component, HostListener, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, HostBinding, HostListener, Input, OnChanges, SimpleChanges } from '@angular/core';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { SubstitutionService } from '../../services/substitution.service';
 
@@ -13,6 +13,24 @@ export class SubstitutionLetterComponent implements OnChanges {
   @Input()
   public letter: string = '';
 
+  @Input()
+  public isSubstitutable: boolean = true;
+
+  @HostBinding('class.is-subs')
+  public get isSubs() {
+    return this.isSubstitutable;
+  }
+
+  @HostBinding('tabindex')
+  public get getTabindex(): string | undefined {
+    return this.isSubstitutable ? '0' : undefined;
+  }
+
+  @HostBinding('aria-role')
+  public get getAriaRole(): string | undefined {
+    return this.isSubstitutable ? 'button' : undefined;
+  }
+
   public translated: Observable<string | undefined>;
 
   constructor(private readonly substitution: SubstitutionService) {
@@ -20,11 +38,17 @@ export class SubstitutionLetterComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.translated = this.substitution.getObservable(this.letter);
+    if (this.isSubstitutable) {
+      this.translated = this.substitution.getObservable(this.letter);
+    } else {
+      this.translated = of(this.letter);
+    }
   }
 
   @HostListener('click')
   onClick(): void {
-    this.substitution.modifySubstitution(this.letter);
+    if (this.isSubstitutable) {
+      this.substitution.modifySubstitution(this.letter);
+    }
   }
 }

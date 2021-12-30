@@ -6,9 +6,13 @@
   margin: 0;
   padding: 0.1em;
 
-  &:hover, &:focus, &:focus-visible {
-    background-color: black;
-    outline: none;
+  &.is-subs {
+    cursor: pointer;
+
+    &:hover, &:focus, &:focus-visible {
+      background-color: black;
+      outline: none;
+    }
   }
 }
 
@@ -33,5 +37,15 @@ div {
 
   &.empty {
 
+  }
+}
+
+:host:not(.is-subs) {
+  .input {
+    background-color: #BBB;
+  }
+
+  .output {
+    background-color: #444;
   }
 }

@@ -68,7 +68,7 @@ export class SubstitutionService {
       value.update(subs.letterObservablesMap.get(letter));
     });
     this.splitters.forEach((value, letters) => {
-      value.subject.next(subs.alphabet.splitAndNormalize(letters));
+      value.subject.next(subs.alphabet.splitAndNormalize(letters, true));
     });
   }
 
@@ -87,7 +87,7 @@ export class SubstitutionService {
   }
 
   public split(letters: string): string[] {
-    return this.substitution$.getValue().alphabet.splitAndNormalize(letters);
+    return this.substitution$.getValue().alphabet.splitAndNormalize(letters, true);
   }
 
   public getSplitObservable(letters: string): Observable<string[]> {
