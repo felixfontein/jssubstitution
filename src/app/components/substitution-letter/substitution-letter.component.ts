@@ -21,12 +21,12 @@ export class SubstitutionLetterComponent implements OnChanges {
     return this.isSubstitutable;
   }
 
-  @HostBinding('tabindex')
+  @HostBinding('attr.tabindex')
   public get getTabindex(): string | undefined {
     return this.isSubstitutable ? '0' : undefined;
   }
 
-  @HostBinding('aria-role')
+  @HostBinding('attr.aria-role')
   public get getAriaRole(): string | undefined {
     return this.isSubstitutable ? 'button' : undefined;
   }
