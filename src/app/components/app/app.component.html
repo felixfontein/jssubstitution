@@ -1,4 +1,4 @@
-<app-header aria-role="menubar"></app-header>
+<app-header aria-role="menubar" *ngIf="appState.showHeader"></app-header>
 <div class="content" aria-role="main">
   <app-substitution [text]="appState.text">
   </app-substitution>
