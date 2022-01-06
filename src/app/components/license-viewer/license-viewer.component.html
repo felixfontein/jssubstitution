@@ -1,0 +1,45 @@
+<div class="content">
+  <div class="title">
+    {{ 'LICENSES.TITLE' | transloco }}
+  </div>
+
+  <p>
+    {{ 'LICENSES.INTRO' | transloco }}
+  </p>
+  <ul>
+    <li *ngFor="let license of this.licenses">
+      <div class="dependency">
+        {{ license.name }}<ng-container *ngIf="license.version"> {{ license.version }}</ng-container>
+      </div>
+      <div class="author" *ngIf="license.author">
+        {{ 'LICENSES.AUTHOR' | transloco:{author: license.author} }}
+      </div>
+      <div class="repository" *ngIf="license.repository">
+        <a href="{{ license.repository }}" target="_blank">{{ 'LICENSES.REPOSITORY' | transloco }}</a>
+      </div>
+      <details *ngIf="license.licenseName && license.licenseText" class="license">
+        <summary>
+          {{ 'LICENSES.LICENSE' | transloco:{license: license.licenseName} }}
+          <span class="click-indicator">{{ 'LICENSES.CLICK_INDICATOR' | transloco }}</span>
+          <span class="hide-indicator">{{ 'LICENSES.HIDE_INDICATOR' | transloco }}</span>
+        </summary>
+        <pre>{{ license.licenseText }}</pre>
+      </details>
+      <div class="license" *ngIf="license.licenseName && !license.licenseText">
+        <a *ngIf="license.licenseURL" href="{{ license.licenseURL }}" target="_blank">
+          {{ 'LICENSES.LICENSE' | transloco:{license: license.licenseName} }}
+        </a>
+        <span *ngIf="!license.licenseURL">
+          {{ 'LICENSES.LICENSE' | transloco:{license: license.licenseName} }}
+        </span>
+      </div>
+      <div class="license" *ngIf="!license.licenseName && !license.licenseText && license.licenseURL">
+        <a href="{{ license.licenseURL }}" target="_blank">{{ 'LICENSES.LICENSE_WO_NAME' | transloco }}</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="bottom">
+  <button class="primary" [mat-dialog-close] cdkFocusInitial>{{ 'OK' | transloco }}</button>
+</div>

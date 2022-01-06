@@ -12,8 +12,21 @@
       }
     }
   },
+  "LICENSES": {
+    "TITLE": "Software Licenses",
+    "INTRO": "This web application contains the following software components:",
+    "AUTHOR": "Author / copyright holder: {{ author }}",
+    "REPOSITORY": "Source code repository",
+    "LICENSE": "License: {{ license }}",
+    "CLICK_INDICATOR": "(click to expand)",
+    "HIDE_INDICATOR": "(click to hide)",
+    "LICENSE_WO_NAME": "License",
+    "SOURCE_CODE_LINK": "Source code of this application"
+  },
   "MENU": "Menu",
   "NOTHING": "Nothing",
+  "OK": "OK",
   "RESET_TEXT": "Start over with text",
-  "SELECT_REPLACEMENT": "Select replacement for “{{ letter }}”"
+  "SELECT_REPLACEMENT": "Select replacement for “{{ letter }}”",
+  "SHOW_LICENSES": "Show software licenses"
 }

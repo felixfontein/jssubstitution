@@ -19,6 +19,7 @@ import { LetterSelectorComponent } from './components/letter-selector/letter-sel
 import { SubstitutionComponent } from './components/substitution/substitution.component';
 import { SubstitutionLetterComponent } from './components/substitution-letter/substitution-letter.component';
 import { SubstitutionStatsComponent } from './components/substitution-stats/substitution-stats.component';
+import { LicenseViewerComponent } from './components/license-viewer/license-viewer.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,11 @@ import { SubstitutionStatsComponent } from './components/substitution-stats/subs
     SubstitutionComponent,
     SubstitutionLetterComponent,
     SubstitutionStatsComponent,
+    LicenseViewerComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MatDialogModule,
     MatMenuModule,
     NoopAnimationsModule,

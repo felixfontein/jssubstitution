@@ -12,8 +12,21 @@
       }
     }
   },
+  "LICENSES": {
+    "TITLE": "Software-Lizenzen",
+    "INTRO": "Diese Web-Applikation enthält die folgenden Software-Komponenten:",
+    "AUTHOR": "Autor / Urheber: {{ author }}",
+    "REPOSITORY": "Quellcode-Projektarchiv",
+    "LICENSE": "Lizenz: {{ license }}",
+    "CLICK_INDICATOR": "(anklicken, um anzuzeigen)",
+    "HIDE_INDICATOR": "(anklicken, um zu verstecken)",
+    "LICENSE_WO_NAME": "Lizenz",
+    "SOURCE_CODE_LINK": "Quellcode dieser Applikation"
+  },
   "MENU": "Menü",
   "NOTHING": "Nichts",
+  "OK": "OK",
   "RESET_TEXT": "Mit Text von Vorne anfangen",
-  "SELECT_REPLACEMENT": "Wähle Ersetzung für «{{ letter }}»"
+  "SELECT_REPLACEMENT": "Wähle Ersetzung für «{{ letter }}»",
+  "SHOW_LICENSES": "Software-Lizenzen anzeigen"
 }

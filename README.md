@@ -12,3 +12,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## License
+
+GNU General Public License v3.0 or later.
+
+See [LICENSE.txt](./LICENSE.txt) to see the full text.

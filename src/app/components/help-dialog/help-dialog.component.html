@@ -2,6 +2,7 @@
     <div class="title">
         {{ this.params.title | transloco }}
     </div>
+
     <div class="navigation" *ngIf="this.params.pages.length > 1">
         <button class="secondary prev" (click)="prevPage()" [disabled]="!hasPrevPage">«</button>
         <span>{{ this.page + 1 }} / {{ this.params.pages.length }}</span>
@@ -20,7 +21,9 @@
         <button class="secondary next" (click)="nextPage()" [disabled]="!hasNextPage">»</button>
     </div>
 </div>
+
 <div class="bottom">
     <button class="primary" [mat-dialog-close] cdkFocusInitial>{{ 'BACK' | transloco }}</button>
     <button class="secondary" [mat-dialog-close] (click)="resetText()" *ngIf="params.offerResetText">{{ 'RESET_TEXT' | transloco }}</button>
+    <button class="secondary" [mat-dialog-close] (click)="params.showLicenses()" *ngIf="params.showLicenses">{{ 'SHOW_LICENSES' | transloco }}</button>
 </div>

@@ -14,6 +14,7 @@ export interface HelpData {
   title: TranslationKey;
   pages: HelpPage[];
   offerResetText?: boolean;
+  showLicenses?: () => void;
 }
 
 

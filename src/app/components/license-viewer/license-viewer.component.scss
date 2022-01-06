@@ -1,0 +1,39 @@
+:host {
+  width: 50em;
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin: 1.5em 0 0;
+  padding: 0;
+}
+
+.dependency {
+  font-size: larger;
+  font-weight: bold;
+}
+
+details summary {
+  span.hide-indicator {
+    display: none;
+  }
+}
+
+details[open] summary {
+  span.click-indicator {
+    display: none;
+  }
+  span.hide-indicator {
+    display: inline;
+  }
+}
+
+a {
+  color: black;
+}
