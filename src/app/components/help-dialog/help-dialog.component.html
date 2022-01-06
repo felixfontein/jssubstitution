@@ -22,4 +22,5 @@
 </div>
 <div class="bottom">
     <button class="primary" [mat-dialog-close] cdkFocusInitial>{{ 'BACK' | transloco }}</button>
+    <button class="secondary" [mat-dialog-close] (click)="resetText()" *ngIf="params.offerResetText">{{ 'RESET_TEXT' | transloco }}</button>
 </div>

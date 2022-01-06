@@ -13,4 +13,5 @@ export const MAIN_HELP: HelpData = {
       ],
     },
   ],
+  offerResetText: true,
 }

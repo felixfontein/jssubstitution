@@ -14,5 +14,6 @@
   },
   "MENU": "Menü",
   "NOTHING": "Nichts",
+  "RESET_TEXT": "Mit Text von Vorne anfangen",
   "SELECT_REPLACEMENT": "Wähle Ersetzung für «{{ letter }}»"
 }

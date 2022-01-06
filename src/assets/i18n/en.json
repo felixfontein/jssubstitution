@@ -14,5 +14,6 @@
   },
   "MENU": "Menu",
   "NOTHING": "Nothing",
+  "RESET_TEXT": "Start over with text",
   "SELECT_REPLACEMENT": "Select replacement for “{{ letter }}”"
 }
