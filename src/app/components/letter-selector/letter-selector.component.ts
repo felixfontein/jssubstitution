@@ -37,13 +37,12 @@ export class LetterSelectorComponent implements OnDestroy {
     this.letters = letters;
     this.subs.push(substitution.getObservable(this.letter).subscribe(l => this.currentLetter = l));
 
-    const otherLetters = onlyLetters.slice(0);
-    otherLetters.splice(otherLetters.indexOf(this.letter), 1);
-
     this.used = new Map<string, BehaviorSubject<boolean>>();
-    otherLetters.forEach(letter => this.used.set(letter, new BehaviorSubject<boolean>(false)));
+    onlyLetters.forEach(letter => this.used.set(letter, new BehaviorSubject<boolean>(false)));
 
     this.current = new Map<string, string>();
+    const otherLetters = onlyLetters.slice(0);
+    otherLetters.splice(otherLetters.indexOf(this.letter), 1);
     otherLetters.forEach(letter => this.subs.push(substitution.getObservable(letter).subscribe(value => {
       this.current.set(letter, value);
       this.updateUsed();
