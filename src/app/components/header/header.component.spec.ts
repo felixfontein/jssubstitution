@@ -4,6 +4,7 @@ import { HeaderComponent } from './header.component';
 import { TranslocoRootModule } from '../../transloco-root.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -12,7 +13,7 @@ describe('HeaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HeaderComponent ],
-      imports: [ MatMenuModule, TranslocoRootModule, HttpClientModule ],
+      imports: [ MatDialogModule, MatMenuModule, TranslocoRootModule, HttpClientModule ],
     })
     .compileComponents();
   });

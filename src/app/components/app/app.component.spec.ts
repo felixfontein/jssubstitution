@@ -1,12 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TranslocoRootModule } from '../../transloco-root.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AppComponent, ],
-      imports: [ MatDialogModule ],
+      imports: [ HttpClientModule, MatDialogModule, TranslocoRootModule ],
     }).compileComponents();
   }));
 
