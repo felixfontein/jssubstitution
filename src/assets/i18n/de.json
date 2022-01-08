@@ -1,6 +1,10 @@
 {
   "BACK": "Zurück",
   "CANCEL": "Abbrechen",
+  "CIPHERS": {
+    "ENGLISH_EXHIBITION": "Chiffretext Englisch",
+    "GERMAN_EXHIBITION": "Chiffretext Deutsch"
+  },
   "HELP": {
     "MAIN": {
       "TITLE": "Substitutions-Chiffre knacken!",

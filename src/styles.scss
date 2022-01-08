@@ -100,3 +100,12 @@ button {
     cursor: not-allowed;
   }
 }
+
+.mat-menu-content {
+  .menu-item-active {
+    display: inline-block;
+
+    width: 1em;
+    margin-right: 0.5em;
+  }
+}

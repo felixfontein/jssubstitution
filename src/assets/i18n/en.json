@@ -1,6 +1,10 @@
 {
   "BACK": "Back",
   "CANCEL": "Cancel",
+  "CIPHERS": {
+    "ENGLISH_EXHIBITION": "Ciphertext in English",
+    "GERMAN_EXHIBITION": "Ciphertext in German"
+  },
   "HELP": {
     "MAIN": {
       "TITLE": "Crack a Substitution Cipher!",
