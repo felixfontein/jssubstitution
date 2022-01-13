@@ -42,7 +42,7 @@ export class AppStateService {
   }
 
   private setCipher(cipher: Cipher) {
-    const alphabet = new Alphabet('ABCDEFGHIJKLMNOPQRSTUVWXYZ', ' .,;:-');
+    const alphabet = new Alphabet('ABCDEFGHIJKLMNOPQRSTUVWXYZ', ' .,;:-"');
     this.text = cipher.text;
     this.subsService.setSubstitution(new Substitution(alphabet));
   }
