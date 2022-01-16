@@ -30,7 +30,7 @@
   "MENU": "Menü",
   "NOTHING": "Nichts",
   "OK": "OK",
-  "RESET_TEXT": "Mit Text von Vorne anfangen",
+  "RESET_TEXT": "Substitution zurücksetzen",
   "SELECT_REPLACEMENT": "Wähle Ersetzung für «{{ letter }}»",
   "SHOW_LICENSES": "Software-Lizenzen anzeigen"
 }

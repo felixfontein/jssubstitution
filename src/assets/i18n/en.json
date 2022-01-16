@@ -10,7 +10,7 @@
       "TITLE": "Crack a Substitution Cipher!",
       "1": {
         "TEXT_1": "This app allows you to crack a substitution cipher.",
-        "TEXT_2": "The shown text (black on white) was encrypted with a substitution cipher. Assign to every used chipher-text letter a clear-text letter (white on black)) to decrypt the message.",
+        "TEXT_2": "The shown text (black on white) was encrypted with a substitution cipher. Assign to every used chipher-text letter a clear-text letter (white on black) to decrypt the message.",
         "TEXT_3": "At the top you can see a frequency analysis of the chiffre-text letters.",
         "TEXT_4": "To assign a letter, tap on a letter in the frequency analysis or in the text. Then you can assign a clear-text letter to the selected cipher-text letter."
       }
@@ -30,7 +30,7 @@
   "MENU": "Menu",
   "NOTHING": "Nothing",
   "OK": "OK",
-  "RESET_TEXT": "Start over with text",
+  "RESET_TEXT": "Reset substitution",
   "SELECT_REPLACEMENT": "Select replacement for “{{ letter }}”",
   "SHOW_LICENSES": "Show software licenses"
 }
