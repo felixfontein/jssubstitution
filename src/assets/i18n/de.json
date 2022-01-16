@@ -13,6 +13,11 @@
         "TEXT_2": "Der angezeigte Text (schwarz auf weiss) wurde mit einer Substitutions-Chiffre verschlüsselt. Ordne den verwendeten Chiffre-Buchstaben Klartext-Buchstaben zu (weiss auf schwarz), um die Nachricht zu entschlüsseln.",
         "TEXT_3": "Oben wird die Häufigkeit der Chiffre-Buchstaben angezeigt.",
         "TEXT_4": "Durch Antippen eines Buchstabens in der Häufigkeitsanzeige oder im Text selber kannst Du auswählen, welcher Klartext-Buchstabe dem Chiffre-Buchstabe zugeordnet werden soll."
+      },
+      "2": {
+        "TEXT_1": "Hinweise:",
+        "TEXT_2": "1. Wenn Du die Buchstabenhäufigkeiten anschaust, kannst Du möglicherweise ein paar der häufigst verwendeten Buchstaben erraten. Zumindest die Anzahl der Möglichkeiten für diese ist sehr klein.",
+        "TEXT_3": "2. Schau bei den angezeigten Klartext-Buchstaben, ob Du Teile von Wörtern erkennen kannst. «E_NE» könnte zum Beispiel «EINE» sein. Damit kannst Du weitere Buchstaben erraten. Mit der Zeit füllen sich immer mehr Lücken, und das Weiterraten wird immer einfacher."
       }
     }
   },

@@ -13,6 +13,11 @@
         "TEXT_2": "The shown text (black on white) was encrypted with a substitution cipher. Assign to every used chipher-text letter a clear-text letter (white on black) to decrypt the message.",
         "TEXT_3": "At the top you can see a frequency analysis of the chiffre-text letters.",
         "TEXT_4": "To assign a letter, tap on a letter in the frequency analysis or in the text. Then you can assign a clear-text letter to the selected cipher-text letter."
+      },
+      "2": {
+        "TEXT_1": "Hints:",
+        "TEXT_2": "1. If you look at the letter frequencies, you can probably guess some of the most frequently used letters. At the very least, the number of possibilities for these should be very small.",
+        "TEXT_3": "2. Look at the clear-text letters whether you can identify parts of words. For example, «O_E» could be «ONE». The further you continue, the more letters you can guess this way. And the more letters you can fill in, the easier it will be to guess even more letters."
       }
     }
   },

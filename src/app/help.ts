@@ -12,6 +12,13 @@ export const MAIN_HELP: HelpData = {
         'HELP.MAIN.1.TEXT_4',
       ],
     },
+    {
+      paragraphs: [
+        'HELP.MAIN.2.TEXT_1',
+        'HELP.MAIN.2.TEXT_2',
+        'HELP.MAIN.2.TEXT_3',
+      ],
+    },
   ],
   offerResetText: true,
 }
