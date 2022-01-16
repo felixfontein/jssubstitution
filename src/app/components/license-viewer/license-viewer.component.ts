@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { BaseActivityReporterComponent } from '../base-activity-reporter.component';
+import { AppStateService } from '../../services/app-state.service';
+
 
 interface License {
   name: string;
@@ -18,11 +21,12 @@ interface License {
   templateUrl: './license-viewer.component.html',
   styleUrls: ['./license-viewer.component.scss']
 })
-export class LicenseViewerComponent {
+export class LicenseViewerComponent extends BaseActivityReporterComponent {
   public loading = true;
   public readonly licenses: License[];
 
-  constructor(private readonly httpClient: HttpClient) {
+  constructor(private readonly httpClient: HttpClient, appState: AppStateService) {
+    super(appState);
     const thisLicense: License = {
       name: 'Substitution Cipher Application',
       repository: 'https://github.com/felixfontein/jssubstitution/',

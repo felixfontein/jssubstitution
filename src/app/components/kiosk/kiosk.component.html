@@ -1,0 +1,8 @@
+<ng-container *ngFor="let cipher of ciphers">
+  <button class="primary"
+          (click)="selectCipher(cipher)"
+          *transloco="let t; lang: getLanguage(cipher.textLocale).name">
+    <div class="language">{{ getLanguage(cipher.textLocale).fullName }}</div>
+    <div class="text">{{ t(cipher.titleKey) }}</div>
+  </button>
+</ng-container>

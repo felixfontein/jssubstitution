@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { TranslocoService } from '@ngneat/transloco';
 
-import { CIPHERS } from '../../ciphers';
+import { Cipher, CIPHERS } from '../../ciphers';
 import { AppStateService } from '../../services/app-state.service';
 import { LANGUAGES } from '../../transloco-root.module';
 
@@ -21,6 +21,12 @@ export class HeaderComponent {
               public readonly appState: AppStateService) { }
 
   public selectLanguage(language: string) {
+    this.appState.informUIActivity();
     this.translate.setActiveLang(language);
+  }
+
+  public selectCipher(cipher: Cipher) {
+    this.appState.informUIActivity();
+    this.appState.selectCipher(cipher);
   }
 }

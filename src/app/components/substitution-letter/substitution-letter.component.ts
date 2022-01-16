@@ -2,6 +2,7 @@ import { Component, HostBinding, HostListener, Input, OnChanges, SimpleChanges }
 
 import { Observable, of } from 'rxjs';
 
+import { AppStateService } from '../../services/app-state.service';
 import { SubstitutionService } from '../../services/substitution.service';
 
 @Component({
@@ -33,7 +34,8 @@ export class SubstitutionLetterComponent implements OnChanges {
 
   public translated: Observable<string | undefined>;
 
-  constructor(private readonly substitution: SubstitutionService) {
+  constructor(private readonly substitution: SubstitutionService,
+              private readonly appState: AppStateService) {
     this.translated = new Observable<string | undefined>();
   }
 
@@ -47,6 +49,7 @@ export class SubstitutionLetterComponent implements OnChanges {
 
   @HostListener('click')
   onClick(): void {
+    this.appState.informUIActivity();
     if (this.isSubstitutable) {
       this.substitution.modifySubstitution(this.letter);
     }

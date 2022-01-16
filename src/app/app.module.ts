@@ -15,11 +15,13 @@ import { AppComponent } from './components/app/app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HelpButtonComponent } from './components/help-button/help-button.component';
 import { HelpDialogComponent } from './components/help-dialog/help-dialog.component';
+import { KioskComponent } from './components/kiosk/kiosk.component';
+import { KioskButtonComponent } from './components/kiosk-button/kiosk-button.component';
 import { LetterSelectorComponent } from './components/letter-selector/letter-selector.component';
+import { LicenseViewerComponent } from './components/license-viewer/license-viewer.component';
 import { SubstitutionComponent } from './components/substitution/substitution.component';
 import { SubstitutionLetterComponent } from './components/substitution-letter/substitution-letter.component';
 import { SubstitutionStatsComponent } from './components/substitution-stats/substitution-stats.component';
-import { LicenseViewerComponent } from './components/license-viewer/license-viewer.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { LicenseViewerComponent } from './components/license-viewer/license-view
     HeaderComponent,
     HelpButtonComponent,
     HelpDialogComponent,
+    KioskComponent,
+    KioskButtonComponent,
     LetterSelectorComponent,
+    LicenseViewerComponent,
     SubstitutionComponent,
     SubstitutionLetterComponent,
     SubstitutionStatsComponent,
-    LicenseViewerComponent,
   ],
   imports: [
     BrowserModule,

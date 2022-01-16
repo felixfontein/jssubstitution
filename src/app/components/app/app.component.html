@@ -4,3 +4,5 @@
   </app-substitution>
 </div>
 <app-help-button [data]="this.mainHelp"></app-help-button>
+<app-kiosk-button *ngIf="appState.kioskMode"></app-kiosk-button>
+<app-kiosk *ngIf="appState.showKiosk"></app-kiosk>

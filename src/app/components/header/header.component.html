@@ -18,7 +18,7 @@
   </button>
   <hr>
   <button mat-menu-item
-          (click)="this.appState.selectCipher(cipher)"
+          (click)="this.selectCipher(cipher)"
           [class.active]="this.appState.activeCipher === cipher"
           *ngFor="let cipher of this.ciphers">
     <span *ngIf="this.appState.activeCipher === cipher" class="menu-item-active" aria-role="img">✔</span>

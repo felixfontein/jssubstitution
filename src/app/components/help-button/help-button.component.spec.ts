@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HelpButtonComponent } from './help-button.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TranslocoRootModule } from '../../transloco-root.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('HelpButtonComponent', () => {
   let component: HelpButtonComponent;
@@ -10,7 +12,7 @@ describe('HelpButtonComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HelpButtonComponent ],
-      imports: [ MatDialogModule ],
+      imports: [ HttpClientModule, MatDialogModule, TranslocoRootModule ],
     })
     .compileComponents();
   });

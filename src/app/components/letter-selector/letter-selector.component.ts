@@ -1,8 +1,11 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { SubstitutionService } from '../../services/substitution.service';
 import { Observable, Subscription, of, BehaviorSubject } from 'rxjs';
+
+import { AppStateService } from '../../services/app-state.service';
+import { BaseActivityReporterComponent } from '../base-activity-reporter.component';
+import { SubstitutionService } from '../../services/substitution.service';
 
 
 export interface LetterSelectorData {
@@ -15,7 +18,7 @@ export interface LetterSelectorData {
   templateUrl: './letter-selector.component.html',
   styleUrls: ['./letter-selector.component.scss']
 })
-export class LetterSelectorComponent implements OnDestroy {
+export class LetterSelectorComponent extends BaseActivityReporterComponent implements OnDestroy {
   private readonly subs: Subscription[] = [];
 
   private readonly current: Map<string, string | undefined>;
@@ -29,7 +32,9 @@ export class LetterSelectorComponent implements OnDestroy {
   public currentLetter: string | undefined = '';
 
   constructor(public readonly substitution: SubstitutionService,
+              private readonly appState: AppStateService,
               @Inject(MAT_DIALOG_DATA) params: LetterSelectorData) {
+    super(appState);
     this.letter = params.letter;
     const onlyLetters = this.substitution.getCurrent().alphabet.letters;
     const letters: (string | undefined)[] = onlyLetters.slice(0);
@@ -65,6 +70,7 @@ export class LetterSelectorComponent implements OnDestroy {
   }
 
   public selectLetter(letter: string | undefined): void {
+    this.appState.informUIActivity();
     this.substitution.getCurrent().lettersMap.get(this.letter)?.next(letter);
   }
 

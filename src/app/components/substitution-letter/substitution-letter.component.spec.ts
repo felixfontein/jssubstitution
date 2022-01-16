@@ -4,6 +4,8 @@ import { SubstitutionLetterComponent } from './substitution-letter.component';
 
 import { DisplayLetterPipe } from '../../pipes/display-letter.pipe';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { TranslocoRootModule } from '../../transloco-root.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 describe('SubstitutionLetterComponent', () => {
@@ -13,7 +15,7 @@ describe('SubstitutionLetterComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ DisplayLetterPipe, SubstitutionLetterComponent ],
-      imports: [ MatDialogModule ],
+      imports: [ HttpClientModule, MatDialogModule, TranslocoRootModule ],
     })
     .compileComponents();
   }));
