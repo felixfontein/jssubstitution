@@ -9,6 +9,7 @@
             [class.primary]="letter === this.currentLetter"
             [class.secondary]="letter !== this.currentLetter"
             [class.used]="isInUse(letter) | async"
+            [disabled]="isInUse(letter) | async"
             [mat-dialog-close]
             (click)="selectLetter(letter)">
       <ng-container *ngIf="letter !== undefined">{{ letter | displayLetter }}</ng-container>

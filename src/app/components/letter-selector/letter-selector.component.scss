@@ -18,6 +18,8 @@
     &.used {
       color: red;
       cursor: not-allowed;
+      border-color: transparent;
+      opacity: 1;
     }
 
     &.primary {
