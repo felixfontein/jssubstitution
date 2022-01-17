@@ -9,15 +9,15 @@
     "MAIN": {
       "TITLE": "Substitutions-Chiffre knacken!",
       "1": {
-        "TEXT_1": "Diese App erlaubt Dir, eine Substitutions-Chiffre zu knacken.",
-        "TEXT_2": "Der angezeigte Text (schwarz auf weiss) wurde mit einer Substitutions-Chiffre verschlüsselt. Ordne den verwendeten Chiffre-Buchstaben Klartext-Buchstaben zu (weiss auf schwarz), um die Nachricht zu entschlüsseln.",
+        "TEXT_1": "Diese App erlaubt Dir, die angezeigte Substitutions-Chiffre zu knacken.",
+        "TEXT_2": "Der angezeigte Text (schwarz auf weiss) wurde mit einer Substitutions-Chiffre verschlüsselt. Ordne den verwendeten Chiffre-Buchstaben per Klick Klartext-Buchstaben zu (weiss auf schwarz), um die Nachricht zu entschlüsseln.",
         "TEXT_3": "Oben wird die Häufigkeit der Chiffre-Buchstaben angezeigt.",
         "TEXT_4": "Durch Antippen eines Buchstabens in der Häufigkeitsanzeige oder im Text selber kannst Du auswählen, welcher Klartext-Buchstabe dem Chiffre-Buchstabe zugeordnet werden soll."
       },
       "2": {
         "TEXT_1": "Hinweise:",
-        "TEXT_2": "1. Wenn Du die Buchstabenhäufigkeiten anschaust, kannst Du möglicherweise ein paar der häufigst verwendeten Buchstaben erraten. Zumindest die Anzahl der Möglichkeiten für diese ist sehr klein.",
-        "TEXT_3": "2. Schau bei den angezeigten Klartext-Buchstaben, ob Du Teile von Wörtern erkennen kannst. «E_NE» könnte zum Beispiel «EINE» sein. Damit kannst Du weitere Buchstaben erraten. Mit der Zeit füllen sich immer mehr Lücken, und das Weiterraten wird immer einfacher."
+        "TEXT_2": "1. Wenn Du die Buchstabenhäufigkeiten anschaust, kannst Du möglicherweise ein paar der häufig verwendeten Buchstaben erraten.",
+        "TEXT_3": "2. Schau bei den angezeigten Klartext-Buchstaben, ob Du Teile von Wörtern erkennen kannst. «E_NE» könnte zum Beispiel «EINE» sein. Damit kannst Du weitere Buchstaben erraten. Mit der Zeit füllen sich immer mehr Lücken, und das Weiterraten wird einfacher."
       }
     }
   },
@@ -33,8 +33,10 @@
     "SOURCE_CODE_LINK": "Quellcode dieser Applikation"
   },
   "MENU": "Menü",
-  "NOTHING": "Nichts",
+  "NO_ASSIGNMENT": "Kein Buchstabe zugewiesen",
   "OK": "OK",
+  "RED_LETTER_LEGEND": "<span>Rote Buchstaben</span> sind bereits zugeordnet.",
+  "REMOVE_ASSIGNMENT": "Zuweisung löschen",
   "RESET_TEXT": "Substitution zurücksetzen",
   "SELECT_REPLACEMENT": "Wähle Ersetzung für «{{ letter }}»",
   "SHOW_LICENSES": "Software-Lizenzen anzeigen"

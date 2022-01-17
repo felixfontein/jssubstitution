@@ -9,15 +9,15 @@
     "MAIN": {
       "TITLE": "Crack a Substitution Cipher!",
       "1": {
-        "TEXT_1": "This app allows you to crack a substitution cipher.",
-        "TEXT_2": "The shown text (black on white) was encrypted with a substitution cipher. Assign to every used chipher-text letter a clear-text letter (white on black) to decrypt the message.",
+        "TEXT_1": "This app allows you to crack the displayed substitution cipher.",
+        "TEXT_2": "The shown text (black on white) was encrypted with a substitution cipher. Click on a used chipher-text letter to assign to it a clear-text letter (white on black) to decrypt the message.",
         "TEXT_3": "At the top you can see a frequency analysis of the chiffre-text letters.",
         "TEXT_4": "To assign a letter, tap on a letter in the frequency analysis or in the text. Then you can assign a clear-text letter to the selected cipher-text letter."
       },
       "2": {
         "TEXT_1": "Hints:",
-        "TEXT_2": "1. If you look at the letter frequencies, you can probably guess some of the most frequently used letters. At the very least, the number of possibilities for these should be very small.",
-        "TEXT_3": "2. Look at the clear-text letters whether you can identify parts of words. For example, «O_E» could be «ONE». The further you continue, the more letters you can guess this way. And the more letters you can fill in, the easier it will be to guess even more letters."
+        "TEXT_2": "1. If you look at the letter frequencies, you can probably guess some of the frequently used letters.",
+        "TEXT_3": "2. Look at the clear-text letters whether you can identify parts of words. For example, «O_E» could be «ONE». The further you continue, the more letters you can guess this way. And the more letters you can fill in, the easier it will be to guess more letters."
       }
     }
   },
@@ -33,8 +33,10 @@
     "SOURCE_CODE_LINK": "Source code of this application"
   },
   "MENU": "Menu",
-  "NOTHING": "Nothing",
+  "NO_ASSIGNMENT": "No letter assigned",
   "OK": "OK",
+  "RED_LETTER_LEGEND": "<span>Red letters</span> have already been assigned.",
+  "REMOVE_ASSIGNMENT": "Remove assignment",
   "RESET_TEXT": "Reset substitution",
   "SELECT_REPLACEMENT": "Select replacement for “{{ letter }}”",
   "SHOW_LICENSES": "Show software licenses"

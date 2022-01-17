@@ -30,3 +30,12 @@
     }
   }
 }
+
+.legend {
+  margin-top: 1em;
+  text-align: center;
+
+  ::ng-deep span {
+    color: red;
+  }
+}

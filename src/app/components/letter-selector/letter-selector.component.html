@@ -12,9 +12,12 @@
             [mat-dialog-close]
             (click)="selectLetter(letter)">
       <ng-container *ngIf="letter !== undefined">{{ letter | displayLetter }}</ng-container>
-      <ng-container *ngIf="letter === undefined">{{ 'NOTHING' | transloco }}</ng-container>
+      <ng-container *ngIf="letter === undefined">
+        {{ (letter === this.currentLetter ? 'NO_ASSIGNMENT' : 'REMOVE_ASSIGNMENT') | transloco }}
+      </ng-container>
     </button>
   </div>
+  <div class="legend" [innerHTML]="'RED_LETTER_LEGEND' | transloco"></div>
 </div>
 <div class="bottom">
   <button class="secondary" [mat-dialog-close] cdkFocusInitial>{{ 'CANCEL' | transloco }}</button>
