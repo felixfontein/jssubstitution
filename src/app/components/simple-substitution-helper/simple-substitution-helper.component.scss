@@ -1,0 +1,116 @@
+:host {
+  > * {
+    margin: 1em;
+  }
+}
+
+.source, .destination {
+  border: 0.1em solid white;
+  padding: 0.5em;
+
+  h2 {
+    margin: 0 0 0.5em;
+    text-align: center;
+
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .letters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    span {
+      display: block;
+      text-align: center;
+
+      width: 2em;
+      line-height: 2em;
+      margin: 0.1em;
+
+      &.empty {
+        color: #777;
+      }
+    }
+  }
+}
+
+.source {
+  background-color: black;
+  border-color: white;
+  color: white;
+
+  .letters {
+    span {
+      color: black;
+      background-color: white;
+    }
+  }
+}
+
+.destination {
+  background-color: white;
+  border-color: black;
+  color: black;
+
+  .letters {
+    span {
+      color: white;
+      background-color: black;
+    }
+  }
+}
+
+.substitution {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .secondary {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .letter {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    margin: 0;
+    padding: 0.1em;
+
+    cursor: pointer;
+
+    &.letter {
+      border: 0;
+    }
+
+    &:hover, &:focus, &:focus-visible {
+      background-color: black;
+      outline: none;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 2em;
+      height: 1.5em;
+      line-height: 1.5em;
+    }
+
+    .input {
+      color: black;
+      background-color: white;
+    }
+
+    .output {
+      color: white;
+      background-color: black;
+    }
+  }
+}

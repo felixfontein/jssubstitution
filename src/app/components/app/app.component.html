@@ -1,8 +1,32 @@
-<app-header aria-role="menubar" *ngIf="appState.showHeader"></app-header>
-<div class="content" aria-role="main">
-  <app-substitution [text]="appState.text">
-  </app-substitution>
-</div>
-<app-help-button [data]="this.mainHelp"></app-help-button>
-<app-kiosk-button *ngIf="appState.kioskMode"></app-kiosk-button>
-<app-kiosk *ngIf="appState.showKiosk"></app-kiosk>
+<ng-container *ngIf="appState.appMode === AppMode.STEP_1_CODING">
+  <app-simple-substitution-helper #mainViewA [substitution]="codingSubs" [length]="6"></app-simple-substitution-helper>
+  <app-help-button [data]="this.codingHelp"></app-help-button>
+</ng-container>
+
+<ng-container *ngIf="appState.appMode === AppMode.STEP_2_CAESAR">
+  <app-simple-substitution-helper #mainViewB [substitution]="caesarSubs" [length]="9"></app-simple-substitution-helper>
+  <app-help-button [data]="this.caesarHelp"></app-help-button>
+</ng-container>
+
+<ng-container *ngIf="appState.appMode === AppMode.STEP_3_ROT13">
+  <app-simple-substitution-helper #mainViewC [substitution]="rot13Subs" [length]="9"></app-simple-substitution-helper>
+  <app-help-button [data]="this.rot13Help"></app-help-button>
+</ng-container>
+
+<ng-container *ngIf="appState.appMode === AppMode.STEP_4_SUBSTITUTION">
+  <app-header aria-role="menubar" *ngIf="appState.showHeader"></app-header>
+  <div class="content" aria-role="main">
+    <div class="content-inside" #mainViewD>
+      <app-substitution [text]="appState.text">
+      </app-substitution>
+    </div>
+  </div>
+  <app-help-button [data]="this.mainHelp"></app-help-button>
+  <app-kiosk-button *ngIf="appState.kioskMode"></app-kiosk-button>
+  <app-kiosk *ngIf="appState.showKiosk"></app-kiosk>
+</ng-container>
+
+<ng-container *ngIf="appState.appMode === AppMode.STEP_5_VIGENERE">
+  <app-vigenere-helper #mainViewE [length]="7" [operation]="'-'"></app-vigenere-helper>
+  <app-help-button [data]="this.vigenereHelp"></app-help-button>
+</ng-container>

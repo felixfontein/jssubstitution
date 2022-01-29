@@ -5,7 +5,22 @@
     "ENGLISH_EXHIBITION": "Chiffretext Englisch",
     "GERMAN_EXHIBITION": "Chiffretext Deutsch"
   },
+  "CIPHERTEXT": "Chiffre-Text:",
   "HELP": {
+    "CAESAR": {
+      "TITLE": "Caesar-Verschlüsselung entschlüsseln",
+      "1": {
+        "TEXT_1": "Finde den mit einer Caesar-Chiffre verschlüsselten Text in der Ausstellung.",
+        "TEXT_2": "Klicke die Vertauschungen an, so dass der Chiffre-Text dem gefundenen verschlüsselten Text entspricht."
+      }
+    },
+    "CODING": {
+      "TITLE": "Kodierung rückgängig machen",
+      "1": {
+        "TEXT_1": "Finde den kodierten Text in der Ausstellung.",
+        "TEXT_2": "Klicke die entsprechenden Kodierungs-Anweisungen an, so dass der Chiffre-Text dem gefundenen kodierten Text entspricht."
+      }
+    },
     "MAIN": {
       "TITLE": "Substitutions-Chiffre knacken!",
       "1": {
@@ -18,6 +33,19 @@
         "TEXT_1": "Hinweise:",
         "TEXT_2": "1. Wenn Du die Buchstabenhäufigkeiten anschaust, kannst Du möglicherweise ein paar der häufig verwendeten Buchstaben erraten.",
         "TEXT_3": "2. Schau bei den angezeigten Klartext-Buchstaben, ob Du Teile von Wörtern erkennen kannst. «E_NE» könnte zum Beispiel «EINE» sein. Damit kannst Du weitere Buchstaben erraten. Mit der Zeit füllen sich immer mehr Lücken, und das Weiterraten wird einfacher."
+      }
+    },
+    "ROT13": {
+      "TITLE": "ROT-13-Verschlüsselung entschlüsseln",
+      "1": {
+        "TEXT_1": "Finde den mit der ROT-13-Chiffre verschlüsselten Text in der Ausstellung.",
+        "TEXT_2": "Klicke die Vertauschungen an, so dass der Chiffre-Text dem gefundenen verschlüsselten Text entspricht."
+      }
+    },
+    "VIGENERE": {
+      "TITLE": "Vigenère-Chiffre entschlüsseln",
+      "1": {
+        "TEXT_1": "Gebe den verschlüsselten Text sowie den Schlüssel-Text ein."
       }
     }
   },
@@ -35,9 +63,15 @@
   "MENU": "Menü",
   "NO_ASSIGNMENT": "Kein Buchstabe zugewiesen",
   "OK": "OK",
+  "PLAINTEXT": "Klartext:",
   "RED_LETTER_LEGEND": "<span>Rote Buchstaben</span> sind bereits zugeordnet.",
   "REMOVE_ASSIGNMENT": "Zuweisung löschen",
+  "REMOVE_LAST": "Letzten entfernen",
   "RESET_TEXT": "Substitution zurücksetzen",
   "SELECT_REPLACEMENT": "Wähle Ersetzung für «{{ letter }}»",
-  "SHOW_LICENSES": "Software-Lizenzen anzeigen"
+  "SHOW_LICENSES": "Software-Lizenzen anzeigen",
+  "VIGENERE": {
+    "KEY_INPUT": "Schlüssel hier eingeben:",
+    "SOURCE_INPUT": "Text hier eingeben:"
+  }
 }

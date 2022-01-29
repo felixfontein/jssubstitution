@@ -13,6 +13,15 @@ import { Cipher, CIPHERS } from '../ciphers';
 const KIOSK_TIMEOUT = 5 * 60 * 1000;
 
 
+export enum AppMode {
+  STEP_1_CODING = 'coding',
+  STEP_2_CAESAR = 'caesar',
+  STEP_3_ROT13 = 'rot13',
+  STEP_4_SUBSTITUTION = 'substitution',
+  STEP_5_VIGENERE = 'vigenere',
+}
+
+
 function selectCipher(language: string | undefined): Cipher {
   for (const cipher of CIPHERS) {
     if (cipher.textLocale === language) {
@@ -27,6 +36,8 @@ function selectCipher(language: string | undefined): Cipher {
   providedIn: 'root'
 })
 export class AppStateService implements OnDestroy {
+  public appMode: AppMode;
+
   public text: string;
 
   public kioskMode: boolean;
@@ -51,6 +62,21 @@ export class AppStateService implements OnDestroy {
       if (params.get('header') == undefined) {
         this.showHeader = false;
       }
+    }
+    this.appMode = AppMode.STEP_4_SUBSTITUTION;
+    switch (params.get('mode') || '') {
+      case 'coding':
+        this.appMode = AppMode.STEP_1_CODING;
+        break;
+      case 'caesar':
+        this.appMode = AppMode.STEP_2_CAESAR;
+        break;
+      case 'rot13':
+        this.appMode = AppMode.STEP_3_ROT13;
+        break;
+      case 'vigenere':
+        this.appMode = AppMode.STEP_5_VIGENERE;
+        break;
     }
 
     // Set up text and alphabet

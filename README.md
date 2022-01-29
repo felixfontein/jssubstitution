@@ -18,6 +18,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 * `?lang=de`, `?lang=en`: select language
 * `?header=off`: disable header
 * `?kiosk=on`: enable kiosk mode; implies `?header=off`
+* `?mode=coding`: instead of substitution, allow to decode something
+* `?mode=caesar`: instead of substitution, allow to decrypt Caesar-3
+* `?mode=rot13`: instead of substitution, allow to encrypt/decrypt ROT-13
+* `?mode=vigenere`: instead of substitution, allow to decrypt Vigenère
 
 ## License
 

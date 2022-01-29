@@ -1,6 +1,42 @@
 import { HelpData } from './components/help-dialog/help-dialog.component';
 
 
+export const CODING_HELP: HelpData = {
+  title: 'HELP.CODING.TITLE',
+  pages: [
+    {
+      paragraphs: [
+        'HELP.CODING.1.TEXT_1',
+        'HELP.CODING.1.TEXT_2',
+      ],
+    },
+  ],
+}
+
+export const CAESAR_HELP: HelpData = {
+  title: 'HELP.CAESAR.TITLE',
+  pages: [
+    {
+      paragraphs: [
+        'HELP.CAESAR.1.TEXT_1',
+        'HELP.CAESAR.1.TEXT_2',
+      ],
+    },
+  ],
+}
+
+export const ROT13_HELP: HelpData = {
+  title: 'HELP.ROT13.TITLE',
+  pages: [
+    {
+      paragraphs: [
+        'HELP.ROT13.1.TEXT_1',
+        'HELP.ROT13.1.TEXT_2',
+      ],
+    },
+  ],
+}
+
 export const MAIN_HELP: HelpData = {
   title: 'HELP.MAIN.TITLE',
   pages: [
@@ -21,4 +57,15 @@ export const MAIN_HELP: HelpData = {
     },
   ],
   offerResetText: true,
+}
+
+export const VIGENERE_HELP: HelpData = {
+  title: 'HELP.VIGENERE.TITLE',
+  pages: [
+    {
+      paragraphs: [
+        'HELP.VIGENERE.1.TEXT_1',
+      ],
+    },
+  ],
 }

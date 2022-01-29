@@ -1,0 +1,92 @@
+.input {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  text-align: center;
+
+  .fields {
+    display: inline-table;
+  }
+
+  .field {
+    display: table-row;
+  }
+
+  label, input {
+    display: table-cell;
+    margin: 0.5em;
+  }
+
+  label {
+    text-align: right;
+    font-size: large;
+  }
+
+  input {
+  }
+}
+
+.source, .key, .destination {
+  border: 0.1em solid black;
+
+  h2 {
+    margin: 0 0 0.5em;
+    text-align: center;
+
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .letters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    span {
+      display: block;
+      text-align: center;
+
+      width: 2em;
+      line-height: 2em;
+      margin: 0.1em;
+
+      &.empty {
+        color: #777;
+      }
+    }
+  }
+}
+
+.source, .key {
+  background-color: black;
+  color: white;
+
+  .letters {
+    span {
+      color: black;
+      background-color: white;
+
+      &.operator {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+}
+
+.destination {
+  background-color: white;
+  color: black;
+
+  .letters {
+    span {
+      color: white;
+      background-color: black;
+
+      &.operator {
+        color: black;
+        background-color: white;
+      }
+    }
+  }
+}
