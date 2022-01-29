@@ -13,6 +13,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## URL parameters
+
+* `?lang=de`, `?lang=en`: select language
+* `?header=off`: disable header
+* `?kiosk=on`: enable kiosk mode; implies `?header=off`
+
 ## License
 
 GNU General Public License v3.0 or later.
