@@ -6,7 +6,9 @@
   </div>
 
   <div class="paragraph">
-    <span *ngFor="let letter of this.letters">{{ letter === undefined ? "_" : letter }}</span>
+    <span *ngFor="let letter of this.letters"
+          [class.quoted]="letter[1]"
+    >{{ letter[0] === undefined ? "_" : letter[0] }}</span>
   </div>
 </div>
 
