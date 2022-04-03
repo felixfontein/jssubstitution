@@ -18,6 +18,7 @@ import { HelpButtonComponent } from './components/help-button/help-button.compon
 import { HelpDialogComponent } from './components/help-dialog/help-dialog.component';
 import { KioskComponent } from './components/kiosk/kiosk.component';
 import { KioskButtonComponent } from './components/kiosk-button/kiosk-button.component';
+import { KioskConfirmDialogComponent } from '../components/kiosk-confirm-dialog/kiosk-confirm-dialog.component';
 import { LetterSelectorComponent } from './components/letter-selector/letter-selector.component';
 import { LicenseViewerComponent } from './components/license-viewer/license-viewer.component';
 import { SimpleSubstitutionHelperComponent } from './components/simple-substitution-helper/simple-substitution-helper.component';
@@ -35,6 +36,7 @@ import { VigenereHelperComponent } from './components/vigenere-helper/vigenere-h
     HelpDialogComponent,
     KioskComponent,
     KioskButtonComponent,
+    KioskConfirmDialogComponent,
     LetterSelectorComponent,
     LicenseViewerComponent,
     SimpleSubstitutionHelperComponent,

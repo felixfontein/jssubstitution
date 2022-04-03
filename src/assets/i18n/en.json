@@ -60,6 +60,10 @@
     "LICENSE_WO_NAME": "License",
     "SOURCE_CODE_LINK": "Source code of this application"
   },
+  "KIOSK_BACK_CONFIRM": {
+    "TEXT": "Do you want to go back to the beginning selection and throw away the current progress?",
+    "TITLE": "Back to beginning?"
+  },
   "MENU": "Menu",
   "NO_ASSIGNMENT": "No letter assigned",
   "OK": "OK",

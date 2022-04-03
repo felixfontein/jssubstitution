@@ -26,6 +26,15 @@ export class Substitution {
     this.lettersMap = lettersMap;
     this.letterObservablesMap = letterObservablesMap;
   }
+
+  public isAnythingDefined(): boolean {
+    for (const letter of this.letters) {
+      if (letter.getValue() !== undefined) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 

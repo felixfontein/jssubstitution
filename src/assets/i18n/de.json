@@ -60,6 +60,10 @@
     "LICENSE_WO_NAME": "Lizenz",
     "SOURCE_CODE_LINK": "Quellcode dieser Applikation"
   },
+  "KIOSK_BACK_CONFIRM": {
+    "TEXT": "Willst du zurück zum Anfang gehen und den aktuellen Fortschritt zurücksetzen?",
+    "TITLE": "Zurück zum Anfang?"
+  },
   "MENU": "Menü",
   "NO_ASSIGNMENT": "Kein Buchstabe zugewiesen",
   "OK": "OK",

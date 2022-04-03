@@ -1,0 +1,16 @@
+<button class="close" [mat-dialog-close]>×</button>
+
+<div class="content">
+  <div class="title">
+    {{ 'KIOSK_BACK_CONFIRM.TITLE' | transloco }}
+  </div>
+
+  <div class="paragraph">
+    {{ 'KIOSK_BACK_CONFIRM.TEXT' | transloco }}
+  </div>
+</div>
+
+<div class="bottom">
+  <button class="primary" [mat-dialog-close]="true">{{ 'BACK' | transloco }}</button>
+  <button class="secondary" [mat-dialog-close]="false" cdkFocusInitial>{{ 'CANCEL' | transloco }}</button>
+</div>
