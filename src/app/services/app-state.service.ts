@@ -110,6 +110,7 @@ export class AppStateService implements OnDestroy {
   }
 
   private resetKioskUI(): void {
+    this.kioskTimeout = undefined;
     this.matDialog.openDialogs.slice().forEach(dialog => dialog.close());
     this.showKiosk = true;
     this.addKioskTimeout();
@@ -128,9 +129,7 @@ export class AppStateService implements OnDestroy {
 
   private addKioskTimeout(): void {
     if (this.kioskMode) {
-      if (this.kioskTimeout !== undefined) {
-        this.removeKioskTimeout();
-      }
+      this.removeKioskTimeout();
       this.kioskTimeout = window.setTimeout(this.resetKioskUI.bind(this), KIOSK_TIMEOUT);
     }
   }
