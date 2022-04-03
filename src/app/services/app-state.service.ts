@@ -112,7 +112,10 @@ export class AppStateService implements OnDestroy {
   private resetKioskUI(): void {
     this.kioskTimeout = undefined;
     this.matDialog.openDialogs.slice().forEach(dialog => dialog.close());
-    this.showKiosk = true;
+    if (!this.showKiosk) {
+      this.showKiosk = true;
+      window.location.reload();
+    }
     this.addKioskTimeout();
   }
 
