@@ -74,6 +74,9 @@
   "RESET_TEXT": "Reset substitution",
   "SELECT_REPLACEMENT": "Select replacement for “{{ letter }}”",
   "SHOW_LICENSES": "Show software licenses",
+  "VIEW_TEXT": {
+    "TITLE": "The decrypted text"
+  },
   "VIGENERE": {
     "KEY_INPUT": "Enter key here:",
     "SOURCE_INPUT": "Enter text here:"

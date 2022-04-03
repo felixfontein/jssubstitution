@@ -1,0 +1,15 @@
+<button class="close" [mat-dialog-close]>×</button>
+
+<div class="content">
+  <div class="title">
+    {{ 'VIEW_TEXT.TITLE' | transloco }}
+  </div>
+
+  <div class="paragraph">
+    <span *ngFor="let letter of this.letters">{{ letter === undefined ? "_" : letter }}</span>
+  </div>
+</div>
+
+<div class="bottom">
+  <button class="primary" [mat-dialog-close] cdkFocusInitial>{{ 'BACK' | transloco }}</button>
+</div>

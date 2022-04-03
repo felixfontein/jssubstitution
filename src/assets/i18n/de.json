@@ -74,6 +74,9 @@
   "RESET_TEXT": "Substitution zurücksetzen",
   "SELECT_REPLACEMENT": "Wähle Ersetzung für «{{ letter }}»",
   "SHOW_LICENSES": "Software-Lizenzen anzeigen",
+  "VIEW_TEXT": {
+    "TITLE": "Der entschlüsselte Text"
+  },
   "VIGENERE": {
     "KEY_INPUT": "Schlüssel hier eingeben:",
     "SOURCE_INPUT": "Text hier eingeben:"

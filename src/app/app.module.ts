@@ -25,7 +25,10 @@ import { SimpleSubstitutionHelperComponent } from './components/simple-substitut
 import { SubstitutionComponent } from './components/substitution/substitution.component';
 import { SubstitutionLetterComponent } from './components/substitution-letter/substitution-letter.component';
 import { SubstitutionStatsComponent } from './components/substitution-stats/substitution-stats.component';
+import { ViewTextButtonComponent } from '../components/view-text-button/view-text-button.component';
+import { ViewTextDialogComponent } from '../components/view-text-dialog/view-text-dialog.component';
 import { VigenereHelperComponent } from './components/vigenere-helper/vigenere-helper.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +46,8 @@ import { VigenereHelperComponent } from './components/vigenere-helper/vigenere-h
     SubstitutionComponent,
     SubstitutionLetterComponent,
     SubstitutionStatsComponent,
+    ViewTextButtonComponent,
+    ViewTextDialogComponent,
     VigenereHelperComponent,
   ],
   imports: [
