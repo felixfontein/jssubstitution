@@ -22,7 +22,14 @@ export enum AppMode {
 }
 
 
-function selectCipher(language: string | undefined): Cipher {
+function selectCipher(language: string | undefined, cipherId: string | undefined): Cipher {
+  if (cipherId !== undefined) {
+    for (const cipher of CIPHERS) {
+      if (cipher.id === cipherId) {
+        return cipher;
+      }
+    }
+  }
   for (const cipher of CIPHERS) {
     if (cipher.textLocale === language) {
       return cipher;
@@ -81,7 +88,7 @@ export class AppStateService implements OnDestroy {
 
     // Set up text and alphabet
     this.text = '';
-    this.currentCipher = selectCipher(this.translation.getActiveLang());
+    this.currentCipher = selectCipher(this.translation.getActiveLang(), params.get('cipher') || undefined);
 
     this.resetText();
   }
