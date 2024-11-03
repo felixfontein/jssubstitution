@@ -85,6 +85,7 @@ export class AppStateService implements OnDestroy {
         this.appMode = AppMode.STEP_5_VIGENERE;
         break;
     }
+    this.translation.selectTranslate('TITLE').subscribe(value => document.title = value);
 
     // Set up text and alphabet
     this.text = '';

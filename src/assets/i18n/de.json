@@ -74,6 +74,7 @@
   "RESET_TEXT": "Substitution zurücksetzen",
   "SELECT_REPLACEMENT": "Wähle Ersetzung für «{{ letter }}»",
   "SHOW_LICENSES": "Software-Lizenzen anzeigen",
+  "TITLE": "Substitutions-Chiffre",
   "VIEW_TEXT": {
     "TITLE": "Der entschlüsselte Text"
   },
