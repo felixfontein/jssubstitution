@@ -99,7 +99,7 @@ export class AppStateService implements OnDestroy {
   }
 
   private setCipher(cipher: Cipher) {
-    const alphabet = new Alphabet('ABCDEFGHIJKLMNOPQRSTUVWXYZ', ' .,;:-"');
+    const alphabet = new Alphabet(cipher.letters, cipher.others);
     this.text = cipher.text;
     this.subsService.setSubstitution(new Substitution(alphabet));
   }
