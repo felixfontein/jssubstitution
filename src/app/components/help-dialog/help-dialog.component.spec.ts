@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { waitForAsync, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { HelpData, HelpDialogComponent } from "./help-dialog.component";
 import { AppStateService } from "../../services/app-state.service";
@@ -15,13 +15,13 @@ describe("HelpDialogComponent", () => {
   let component: HelpDialogComponent;
   let fixture: ComponentFixture<HelpDialogComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       declarations: [HelpDialogComponent],
       providers: [AppStateService, { provide: MAT_DIALOG_DATA, useValue: EMPTY_HELP }],
       imports: [MatDialogModule, TranslocoRootModule, HttpClientModule],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HelpDialogComponent);

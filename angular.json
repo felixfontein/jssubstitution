@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "jssubstitution:build:production"
+              "buildTarget": "jssubstitution:build:production"
             },
             "development": {
-              "browserTarget": "jssubstitution:build:development"
+              "buildTarget": "jssubstitution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "jssubstitution:build"
+            "buildTarget": "jssubstitution:build"
           }
         },
         "test": {
@@ -107,7 +107,6 @@
       }
     }
   },
-  "defaultProject": "jssubstitution",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }

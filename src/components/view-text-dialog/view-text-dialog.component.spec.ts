@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { waitForAsync, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { ViewTextDialogComponent } from "./view-text-dialog.component";
 import { AppStateService } from "../../app/services/app-state.service";
@@ -10,13 +10,13 @@ describe("ViewTextDialogComponent", () => {
   let component: ViewTextDialogComponent;
   let fixture: ComponentFixture<ViewTextDialogComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       declarations: [ViewTextDialogComponent],
       providers: [AppStateService],
       imports: [MatDialogModule, TranslocoRootModule, HttpClientModule],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ViewTextDialogComponent);

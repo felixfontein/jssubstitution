@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { waitForAsync, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { SubstitutionStatsComponent } from "./substitution-stats.component";
 import { DisplayLetterPipe } from "../../pipes/display-letter.pipe";
@@ -8,7 +8,7 @@ describe("SubstitutionStatsComponent", () => {
   let component: SubstitutionStatsComponent;
   let fixture: ComponentFixture<SubstitutionStatsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [DisplayLetterPipe, SubstitutionStatsComponent],
       imports: [MatDialogModule],

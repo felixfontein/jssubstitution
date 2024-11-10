@@ -30,19 +30,17 @@ button {
   }
 }
 
+.mat-mdc-dialog-surface {
+  padding: 24px;
+}
+
 mat-dialog-container {
-  position: relative;
-
-  &.mat-dialog-container {
-    display: flex;
-    max-height: 100vh;
-  }
-
-  > * {
+  .mat-mdc-dialog-component-host {
     display: flex;
     flex-direction: column;
     justify-content: normal;
-    max-height: 100%;
+
+    max-height: calc(100vh - 2 * 24px);
 
     .title {
       text-align: center;

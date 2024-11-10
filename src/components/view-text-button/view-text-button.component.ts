@@ -14,6 +14,7 @@ export class ViewTextButtonComponent {
   showText(): void {
     const config: MatDialogConfig = {
       role: "dialog",
+      width: "50em",
       restoreFocus: true,
     };
     this.matDialogService.open(ViewTextDialogComponent, config);

@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { waitForAsync, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { LetterSelectorComponent } from "./letter-selector.component";
 import { MAT_DIALOG_DATA, MatDialogModule } from "@angular/material/dialog";
@@ -11,13 +11,13 @@ describe("LetterSelectorComponent", () => {
   let component: LetterSelectorComponent;
   let fixture: ComponentFixture<LetterSelectorComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       declarations: [LetterSelectorComponent, DisplayLetterPipe],
       providers: [AppStateService, { provide: MAT_DIALOG_DATA, useValue: { letter: "A" } }],
       imports: [MatDialogModule, TranslocoRootModule, HttpClientModule],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LetterSelectorComponent);
