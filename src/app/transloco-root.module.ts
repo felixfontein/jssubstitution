@@ -1,16 +1,8 @@
 import { Injectable, NgModule } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
-import {
-  getBrowserLang,
-  TRANSLOCO_LOADER,
-  Translation,
-  TranslocoLoader,
-  TRANSLOCO_CONFIG,
-  translocoConfig,
-  TranslocoModule,
-} from "@ngneat/transloco";
-import { Locale, TranslocoLocaleModule } from "@ngneat/transloco-locale";
+import { getBrowserLang, provideTransloco, Translation, TranslocoLoader, TranslocoModule } from "@ngneat/transloco";
+import { Locale, TranslocoLocaleModule, provideTranslocoLocale } from "@ngneat/transloco-locale";
 
 import { environment } from "../environments/environment";
 
@@ -75,23 +67,20 @@ function pickDefaultLanguage(): string {
 
 @NgModule({
   exports: [TranslocoModule, TranslocoLocaleModule],
-  imports: [
-    TranslocoLocaleModule.forRoot({
-      langToLocaleMapping: getLangLocaleMapping(),
-    }),
-  ],
   providers: [
-    {
-      provide: TRANSLOCO_CONFIG,
-      useValue: translocoConfig({
+    provideTransloco({
+      config: {
         availableLangs: AVAILABLE_LANGS,
         defaultLang: pickDefaultLanguage(),
         fallbackLang: "en",
         reRenderOnLangChange: true,
         prodMode: environment.production,
-      }),
-    },
-    { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },
+      },
+      loader: TranslocoHttpLoader,
+    }),
+    provideTranslocoLocale({
+      langToLocaleMapping: getLangLocaleMapping(),
+    }),
   ],
 })
 export class TranslocoRootModule {}
