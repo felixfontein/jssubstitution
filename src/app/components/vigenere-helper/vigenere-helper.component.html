@@ -1,36 +1,38 @@
 <div class="input">
   <div class="fields">
     <div class="field">
-      <label for="input">{{ 'VIGENERE.SOURCE_INPUT' | transloco }}</label>
-      <input [(ngModel)]="textInput"
-             (input)="inputChanged()"
-             pattern="[a-zA-Z]*"
-             [attr.size]="this.length"
-             [attr.maxlength]="this.length"
-             id="input"
-             type="text">
+      <label for="input">{{ "VIGENERE.SOURCE_INPUT" | transloco }}</label>
+      <input
+        [(ngModel)]="textInput"
+        (input)="inputChanged()"
+        pattern="[a-zA-Z]*"
+        [attr.size]="this.length"
+        [attr.maxlength]="this.length"
+        id="input"
+        type="text"
+      />
     </div>
 
     <div class="field">
-      <label for="key">{{ 'VIGENERE.KEY_INPUT' | transloco }}</label>
-      <input [(ngModel)]="keyInput"
-             (input)="inputChanged()"
-             pattern="[a-zA-Z]*"
-             [attr.size]="this.length"
-             [attr.maxlength]="this.length"
-             id="key"
-             type="text">
+      <label for="key">{{ "VIGENERE.KEY_INPUT" | transloco }}</label>
+      <input
+        [(ngModel)]="keyInput"
+        (input)="inputChanged()"
+        pattern="[a-zA-Z]*"
+        [attr.size]="this.length"
+        [attr.maxlength]="this.length"
+        id="key"
+        type="text"
+      />
     </div>
   </div>
 </div>
 
 <div class="source">
   <div class="letters">
-    <span class="operator">
-
-    </span>
+    <span class="operator"> </span>
     <span *ngFor="let letter of this.source" [class.empty]="letter === undefined">
-      {{ letter ?? '?' }}
+      {{ letter ?? "?" }}
     </span>
   </div>
 </div>
@@ -38,21 +40,19 @@
 <div class="key">
   <div class="letters">
     <span class="operator">
-      {{ operation === '+' ? '+' : '−' }}
+      {{ operation === "+" ? "+" : "−" }}
     </span>
     <span *ngFor="let letter of this.key" [class.empty]="letter === undefined">
-      {{ letter ?? '?' }}
+      {{ letter ?? "?" }}
     </span>
   </div>
 </div>
 
 <div class="destination">
   <div class="letters">
-    <span class="operator">
-      =
-    </span>
+    <span class="operator"> = </span>
     <span *ngFor="let letter of this.destination" [class.empty]="letter === undefined">
-      {{ letter ?? '?' }}
+      {{ letter ?? "?" }}
     </span>
   </div>
 </div>

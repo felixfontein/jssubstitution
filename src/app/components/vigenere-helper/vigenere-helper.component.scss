@@ -11,7 +11,8 @@
     display: table-row;
   }
 
-  label, input {
+  label,
+  input {
     display: table-cell;
     margin: 0.5em;
   }
@@ -25,7 +26,9 @@
   }
 }
 
-.source, .key, .destination {
+.source,
+.key,
+.destination {
   border: 0.1em solid black;
 
   h2 {
@@ -57,7 +60,8 @@
   }
 }
 
-.source, .key {
+.source,
+.key {
   background-color: black;
   color: white;
 

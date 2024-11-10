@@ -1,18 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SubstitutionComponent } from './substitution.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { SubstitutionComponent } from "./substitution.component";
+import { MatDialogModule } from "@angular/material/dialog";
 
-describe('SubstitutionComponent', () => {
+describe("SubstitutionComponent", () => {
   let component: SubstitutionComponent;
   let fixture: ComponentFixture<SubstitutionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubstitutionComponent ],
-      imports: [ MatDialogModule, ],
-    })
-    .compileComponents();
+      declarations: [SubstitutionComponent],
+      imports: [MatDialogModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,7 +20,7 @@ describe('SubstitutionComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

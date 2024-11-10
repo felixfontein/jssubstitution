@@ -1,26 +1,32 @@
-<div class="spacer">
-</div>
+<div class="spacer"></div>
 
 <button class="menu" [matMenuTriggerFor]="menu" [attr.aria-label]="'MENU' | transloco">
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
     <g fill="#000">
-      <path d="M1 4 h22 a1 1 0 0 1 1 1 v.667 a1 1 0 0 1-1 1 H1 a1 1 0 0 1-1-1"/>
-      <path d="M1 12 h22 a1 1 0 0 1 1 1 v.667 a1 1 0 0 1-1 1 H1 a1 1 0 0 1-1-1"/>
-      <path d="M1 20 h22 a1 1 0 0 1 1 1 v.667 a1 1 0 0 1-1 1 H1 a1 1 0 0 1-1-1"/>
+      <path d="M1 4 h22 a1 1 0 0 1 1 1 v.667 a1 1 0 0 1-1 1 H1 a1 1 0 0 1-1-1" />
+      <path d="M1 12 h22 a1 1 0 0 1 1 1 v.667 a1 1 0 0 1-1 1 H1 a1 1 0 0 1-1-1" />
+      <path d="M1 20 h22 a1 1 0 0 1 1 1 v.667 a1 1 0 0 1-1 1 H1 a1 1 0 0 1-1-1" />
     </g>
   </svg>
 </button>
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="selectLanguage(language.name)"
-          *ngFor="let language of this.languages">
+  <button mat-menu-item (click)="selectLanguage(language.name)" *ngFor="let language of this.languages">
     {{ language.fullName }}
   </button>
-  <hr>
-  <button mat-menu-item
-          (click)="this.selectCipher(cipher)"
-          [class.active]="this.appState.activeCipher === cipher"
-          *ngFor="let cipher of this.ciphers">
+  <hr />
+  <button
+    mat-menu-item
+    (click)="this.selectCipher(cipher)"
+    [class.active]="this.appState.activeCipher === cipher"
+    *ngFor="let cipher of this.ciphers"
+  >
     <span *ngIf="this.appState.activeCipher === cipher" class="menu-item-active" aria-role="img">✔</span>
     <span *ngIf="this.appState.activeCipher !== cipher" class="menu-item-active" aria-role="none"></span>
     <span>{{ cipher.titleKey | transloco }}</span>

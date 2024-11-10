@@ -1,20 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { LicenseViewerComponent } from './license-viewer.component';
-import { HttpClientModule } from '@angular/common/http';
-import { TranslocoRootModule } from '../../transloco-root.module';
-import { MatDialogModule } from '@angular/material/dialog';
+import { LicenseViewerComponent } from "./license-viewer.component";
+import { HttpClientModule } from "@angular/common/http";
+import { TranslocoRootModule } from "../../transloco-root.module";
+import { MatDialogModule } from "@angular/material/dialog";
 
-describe('LicenseViewerComponent', () => {
+describe("LicenseViewerComponent", () => {
   let component: LicenseViewerComponent;
   let fixture: ComponentFixture<LicenseViewerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LicenseViewerComponent ],
-      imports: [ HttpClientModule, MatDialogModule, TranslocoRootModule ],
-    })
-    .compileComponents();
+      declarations: [LicenseViewerComponent],
+      imports: [HttpClientModule, MatDialogModule, TranslocoRootModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -23,7 +22,7 @@ describe('LicenseViewerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

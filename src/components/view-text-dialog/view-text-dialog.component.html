@@ -2,16 +2,18 @@
 
 <div class="content">
   <div class="title">
-    {{ 'VIEW_TEXT.TITLE' | transloco }}
+    {{ "VIEW_TEXT.TITLE" | transloco }}
   </div>
 
   <div class="paragraph">
-    <span *ngFor="let letter of this.letters"
-          [class.quoted]="letter[1]"
-    >{{ letter[0] === undefined ? "_" : letter[0] }}</span>
+    <span *ngFor="let letter of this.letters" [class.quoted]="letter[1]">{{
+      letter[0] === undefined ? "_" : letter[0]
+    }}</span>
   </div>
 </div>
 
 <div class="bottom">
-  <button class="primary" [mat-dialog-close] cdkFocusInitial>{{ 'BACK' | transloco }}</button>
+  <button class="primary" [mat-dialog-close] cdkFocusInitial>
+    {{ "BACK" | transloco }}
+  </button>
 </div>

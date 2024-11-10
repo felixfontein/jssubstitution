@@ -1,13 +1,11 @@
+import { Injectable } from "@angular/core";
+import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material/dialog";
 
-import { Injectable } from '@angular/core';
-import { MatDialog, MatDialogConfig, MatDialogRef  } from '@angular/material/dialog';
+import { BehaviorSubject, Observable, Subscription } from "rxjs";
 
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { LetterSelectorComponent, LetterSelectorData } from "../components/letter-selector/letter-selector.component";
 
-import { LetterSelectorComponent, LetterSelectorData } from '../components/letter-selector/letter-selector.component';
-
-import { EMPTY_SUBSTITUTION, Substitution } from '../utils/substitution';
-
+import { EMPTY_SUBSTITUTION, Substitution } from "../utils/substitution";
 
 class LetterData {
   public readonly subject: BehaviorSubject<string | undefined>;
@@ -26,13 +24,12 @@ class LetterData {
       this.subscription = undefined;
     }
     if (obs) {
-      this.subscription = obs.subscribe(value => this.subject.next(value));
+      this.subscription = obs.subscribe((value) => this.subject.next(value));
     } else {
       this.subject.next(undefined);
     }
   }
 }
-
 
 class SplitData {
   public readonly subject: BehaviorSubject<string[]>;
@@ -44,9 +41,8 @@ class SplitData {
   }
 }
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class SubstitutionService {
   private readonly substitution$: BehaviorSubject<Substitution>;
@@ -63,10 +59,10 @@ export class SubstitutionService {
     this.substitution = this.substitution$.asObservable();
     this.letters = new Map<string, LetterData>();
     this.splitters = new Map<string, SplitData>();
-    this.substitution$.subscribe(subs => this.updateSubstitution(subs));
+    this.substitution$.subscribe((subs) => this.updateSubstitution(subs));
     this.hoverLetter$ = new BehaviorSubject<string | undefined>(undefined);
     this.hoverLetter = this.hoverLetter$.asObservable();
-    this.hoverLetter.subscribe(letter => console.log('hover', letter));
+    this.hoverLetter.subscribe((letter) => console.log("hover", letter));
   }
 
   private updateSubstitution(subs: Substitution): void {
@@ -111,7 +107,7 @@ export class SubstitutionService {
 
   public modifySubstitution(letter: string): void {
     const config: MatDialogConfig = {
-      role: 'dialog',
+      role: "dialog",
       restoreFocus: true,
     };
     config.data = <LetterSelectorData>{

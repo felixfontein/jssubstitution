@@ -1,5 +1,5 @@
-import { Injectable, NgModule } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable, NgModule } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 import {
   getBrowserLang,
@@ -9,12 +9,12 @@ import {
   TRANSLOCO_CONFIG,
   translocoConfig,
   TranslocoModule,
-} from '@ngneat/transloco';
-import { Locale, TranslocoLocaleModule } from '@ngneat/transloco-locale';
+} from "@ngneat/transloco";
+import { Locale, TranslocoLocaleModule } from "@ngneat/transloco-locale";
 
-import { environment } from '../environments/environment';
+import { environment } from "../environments/environment";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class TranslocoHttpLoader implements TranslocoLoader {
   constructor(private http: HttpClient) {}
 
@@ -23,47 +23,41 @@ export class TranslocoHttpLoader implements TranslocoLoader {
   }
 }
 
-
 export interface Language {
   readonly name: string;
   readonly fullName: string;
   readonly locale: Locale;
 }
 
-
 export const LANGUAGES: Language[] = [
   {
-    name: 'en',
-    fullName: 'English',
-    locale: 'en-US',
+    name: "en",
+    fullName: "English",
+    locale: "en-US",
   },
   {
-    name: 'de',
-    fullName: 'Deutsch',
-    locale: 'de-DE',
+    name: "de",
+    fullName: "Deutsch",
+    locale: "de-DE",
   },
 ];
 
+const AVAILABLE_LANGS = LANGUAGES.map((l) => l.name);
 
-const AVAILABLE_LANGS = LANGUAGES.map(l => l.name);
-
-
-function getLangLocaleMapping(): {[label: string]: string} {
-  const result: {[label: string]: string} = {};
-  LANGUAGES.forEach(l => result[l.name] = l.locale);
+function getLangLocaleMapping(): { [label: string]: string } {
+  const result: { [label: string]: string } = {};
+  LANGUAGES.forEach((l) => (result[l.name] = l.locale));
   return result;
 }
-
 
 function isValidLanguage(language: string | null | undefined): language is string {
   return !!language && AVAILABLE_LANGS.indexOf(language) >= 0;
 }
 
-
 function pickDefaultLanguage(): string {
   try {
     const params = new URLSearchParams(window.location.search);
-    const language = params.get('lang');
+    const language = params.get("lang");
     if (isValidLanguage(language)) {
       return language;
     }
@@ -76,16 +70,15 @@ function pickDefaultLanguage(): string {
     return language;
   }
 
-  return 'en';
+  return "en";
 }
 
-
 @NgModule({
-  exports: [ TranslocoModule, TranslocoLocaleModule ],
+  exports: [TranslocoModule, TranslocoLocaleModule],
   imports: [
     TranslocoLocaleModule.forRoot({
       langToLocaleMapping: getLangLocaleMapping(),
-    })
+    }),
   ],
   providers: [
     {
@@ -93,12 +86,12 @@ function pickDefaultLanguage(): string {
       useValue: translocoConfig({
         availableLangs: AVAILABLE_LANGS,
         defaultLang: pickDefaultLanguage(),
-        fallbackLang: 'en',
+        fallbackLang: "en",
         reRenderOnLangChange: true,
         prodMode: environment.production,
-      })
+      }),
     },
-    { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader }
-  ]
+    { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },
+  ],
 })
 export class TranslocoRootModule {}

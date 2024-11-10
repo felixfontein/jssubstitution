@@ -1,19 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SimpleSubstitutionHelperComponent } from './simple-substitution-helper.component';
-import { TranslocoRootModule } from '../../transloco-root.module';
-import { HttpClientModule } from '@angular/common/http';
+import { SimpleSubstitutionHelperComponent } from "./simple-substitution-helper.component";
+import { TranslocoRootModule } from "../../transloco-root.module";
+import { HttpClientModule } from "@angular/common/http";
 
-describe('SimpleSubstitutionHelperComponent', () => {
+describe("SimpleSubstitutionHelperComponent", () => {
   let component: SimpleSubstitutionHelperComponent;
   let fixture: ComponentFixture<SimpleSubstitutionHelperComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SimpleSubstitutionHelperComponent ],
-      imports: [ HttpClientModule, TranslocoRootModule ],
-    })
-    .compileComponents();
+      declarations: [SimpleSubstitutionHelperComponent],
+      imports: [HttpClientModule, TranslocoRootModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -22,7 +21,7 @@ describe('SimpleSubstitutionHelperComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,22 +1,23 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { AppStateService } from '../../services/app-state.service';
+import { AppStateService } from "../../services/app-state.service";
 
-import { Cipher, CIPHERS } from '../../ciphers';
-import { Language, LANGUAGES } from '../../transloco-root.module';
-import { TranslocoService } from '@ngneat/transloco';
-
+import { Cipher, CIPHERS } from "../../ciphers";
+import { Language, LANGUAGES } from "../../transloco-root.module";
+import { TranslocoService } from "@ngneat/transloco";
 
 @Component({
-  selector: 'app-kiosk',
-  templateUrl: './kiosk.component.html',
-  styleUrls: ['./kiosk.component.scss']
+  selector: "app-kiosk",
+  templateUrl: "./kiosk.component.html",
+  styleUrls: ["./kiosk.component.scss"],
 })
 export class KioskComponent {
   public readonly ciphers = CIPHERS;
 
-  constructor(private readonly appState: AppStateService,
-              private readonly translate: TranslocoService) { }
+  constructor(
+    private readonly appState: AppStateService,
+    private readonly translate: TranslocoService,
+  ) {}
 
   public getLanguage(locale: string): Language {
     for (const lang of LANGUAGES) {

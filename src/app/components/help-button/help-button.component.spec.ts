@@ -1,20 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { HelpButtonComponent } from './help-button.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { TranslocoRootModule } from '../../transloco-root.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HelpButtonComponent } from "./help-button.component";
+import { MatDialogModule } from "@angular/material/dialog";
+import { TranslocoRootModule } from "../../transloco-root.module";
+import { HttpClientModule } from "@angular/common/http";
 
-describe('HelpButtonComponent', () => {
+describe("HelpButtonComponent", () => {
   let component: HelpButtonComponent;
   let fixture: ComponentFixture<HelpButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HelpButtonComponent ],
-      imports: [ HttpClientModule, MatDialogModule, TranslocoRootModule ],
-    })
-    .compileComponents();
+      declarations: [HelpButtonComponent],
+      imports: [HttpClientModule, MatDialogModule, TranslocoRootModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -23,7 +22,7 @@ describe('HelpButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
