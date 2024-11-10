@@ -23,6 +23,7 @@ export class HelpButtonComponent {
     if (this.data) {
       const config: MatDialogConfig = {
         role: "dialog",
+        width: "50em",
         restoreFocus: true,
       };
       config.data = this.data;

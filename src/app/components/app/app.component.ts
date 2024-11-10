@@ -49,6 +49,7 @@ export class AppComponent extends BaseActivityReporterComponent implements After
         this.appState.informUIActivity();
         const config: MatDialogConfig = {
           role: "dialog",
+          width: "50em",
           restoreFocus: true,
         };
         this.matDialogService.open(LicenseViewerComponent, config);
