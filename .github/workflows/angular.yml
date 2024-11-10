@@ -67,4 +67,4 @@ jobs:
         run: npm ci
 
       - name: Run unit tests
-        run: ./node_modules/.bin/ng test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+        run: ./node_modules/.bin/ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
