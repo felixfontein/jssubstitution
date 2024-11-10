@@ -40,6 +40,8 @@ mat-dialog-container {
     flex-direction: column;
     justify-content: normal;
 
+    max-height: calc(100vh - 2 * 24px);
+
     .title {
       text-align: center;
       font-size: x-large;
