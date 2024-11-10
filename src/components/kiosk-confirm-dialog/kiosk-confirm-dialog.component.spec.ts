@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { waitForAsync, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { KioskConfirmDialogComponent } from "./kiosk-confirm-dialog.component";
 import { AppStateService } from "../../app/services/app-state.service";
@@ -10,13 +10,13 @@ describe("KioskConfirmDialogComponent", () => {
   let component: KioskConfirmDialogComponent;
   let fixture: ComponentFixture<KioskConfirmDialogComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       declarations: [KioskConfirmDialogComponent],
       providers: [AppStateService],
       imports: [MatDialogModule, TranslocoRootModule, HttpClientModule],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(KioskConfirmDialogComponent);

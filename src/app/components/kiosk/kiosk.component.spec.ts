@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { waitForAsync, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { KioskComponent } from "./kiosk.component";
 import { MatDialogModule } from "@angular/material/dialog";
@@ -9,12 +9,12 @@ describe("KioskComponent", () => {
   let component: KioskComponent;
   let fixture: ComponentFixture<KioskComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       declarations: [KioskComponent],
       imports: [HttpClientModule, MatDialogModule, TranslocoRootModule],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(KioskComponent);

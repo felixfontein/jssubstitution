@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { waitForAsync, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { VigenereHelperComponent } from "./vigenere-helper.component";
 import { HttpClientModule } from "@angular/common/http";
@@ -9,12 +9,12 @@ describe("VigenereHelperComponent", () => {
   let component: VigenereHelperComponent;
   let fixture: ComponentFixture<VigenereHelperComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       declarations: [VigenereHelperComponent],
       imports: [FormsModule, HttpClientModule, TranslocoRootModule],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VigenereHelperComponent);

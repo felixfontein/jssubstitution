@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { waitForAsync, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { ViewTextButtonComponent } from "./view-text-button.component";
 import { HttpClientModule } from "@angular/common/http";
@@ -9,12 +9,12 @@ describe("ViewTextButtonComponent", () => {
   let component: ViewTextButtonComponent;
   let fixture: ComponentFixture<ViewTextButtonComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       declarations: [ViewTextButtonComponent],
       imports: [HttpClientModule, MatDialogModule, TranslocoRootModule],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ViewTextButtonComponent);
