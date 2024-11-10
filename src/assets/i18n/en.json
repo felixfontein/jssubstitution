@@ -3,7 +3,8 @@
   "CANCEL": "Cancel",
   "CIPHERS": {
     "ENGLISH_EXHIBITION": "Ciphertext in English",
-    "GERMAN_EXHIBITION": "Ciphertext in German"
+    "GERMAN_EXHIBITION": "Ciphertext in German",
+    "KINDERUNI_2024": "KinderUni 2024 (German)"
   },
   "CIPHERTEXT": "Cipher text:",
   "HELP": {
@@ -74,6 +75,7 @@
   "RESET_TEXT": "Reset substitution",
   "SELECT_REPLACEMENT": "Select replacement for “{{ letter }}”",
   "SHOW_LICENSES": "Show software licenses",
+  "TITLE": "Substitution Cipher",
   "VIEW_TEXT": {
     "TITLE": "The decrypted text"
   },

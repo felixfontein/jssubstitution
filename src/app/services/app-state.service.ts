@@ -22,7 +22,14 @@ export enum AppMode {
 }
 
 
-function selectCipher(language: string | undefined): Cipher {
+function selectCipher(language: string | undefined, cipherId: string | undefined): Cipher {
+  if (cipherId !== undefined) {
+    for (const cipher of CIPHERS) {
+      if (cipher.id === cipherId) {
+        return cipher;
+      }
+    }
+  }
   for (const cipher of CIPHERS) {
     if (cipher.textLocale === language) {
       return cipher;
@@ -78,10 +85,11 @@ export class AppStateService implements OnDestroy {
         this.appMode = AppMode.STEP_5_VIGENERE;
         break;
     }
+    this.translation.selectTranslate('TITLE').subscribe(value => document.title = value);
 
     // Set up text and alphabet
     this.text = '';
-    this.currentCipher = selectCipher(this.translation.getActiveLang());
+    this.currentCipher = selectCipher(this.translation.getActiveLang(), params.get('cipher') || undefined);
 
     this.resetText();
   }
@@ -91,7 +99,7 @@ export class AppStateService implements OnDestroy {
   }
 
   private setCipher(cipher: Cipher) {
-    const alphabet = new Alphabet('ABCDEFGHIJKLMNOPQRSTUVWXYZ', ' .,;:-"');
+    const alphabet = new Alphabet(cipher.letters, cipher.others);
     this.text = cipher.text;
     this.subsService.setSubstitution(new Substitution(alphabet));
   }
