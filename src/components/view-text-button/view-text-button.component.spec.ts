@@ -1,20 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ViewTextButtonComponent } from './view-text-button.component';
-import { HttpClientModule } from '@angular/common/http';
-import { MatDialogModule } from '@angular/material/dialog';
-import { TranslocoRootModule } from '../../app/transloco-root.module';
+import { ViewTextButtonComponent } from "./view-text-button.component";
+import { HttpClientModule } from "@angular/common/http";
+import { MatDialogModule } from "@angular/material/dialog";
+import { TranslocoRootModule } from "../../app/transloco-root.module";
 
-describe('ViewTextButtonComponent', () => {
+describe("ViewTextButtonComponent", () => {
   let component: ViewTextButtonComponent;
   let fixture: ComponentFixture<ViewTextButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewTextButtonComponent ],
-      imports: [ HttpClientModule, MatDialogModule, TranslocoRootModule ],
-    })
-    .compileComponents();
+      declarations: [ViewTextButtonComponent],
+      imports: [HttpClientModule, MatDialogModule, TranslocoRootModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -23,7 +22,7 @@ describe('ViewTextButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

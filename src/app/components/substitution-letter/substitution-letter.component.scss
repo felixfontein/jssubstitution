@@ -9,7 +9,9 @@
   &.is-subs {
     cursor: pointer;
 
-    &:hover, &:focus, &:focus-visible {
+    &:hover,
+    &:focus,
+    &:focus-visible {
       background-color: black;
       outline: none;
     }
@@ -17,11 +19,11 @@
 
   &.hovering {
     outline: none;
-    background-color: #AAF;
+    background-color: #aaf;
 
     .input {
-      color: #00F;
-      background-color: #EEF;
+      color: #00f;
+      background-color: #eef;
     }
 
     .output {
@@ -63,7 +65,7 @@ div {
 
 :host:not(.is-subs) {
   .input {
-    background-color: #BBB;
+    background-color: #bbb;
   }
 
   .output {

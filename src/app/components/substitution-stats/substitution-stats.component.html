@@ -1,11 +1,17 @@
-<button class="letter"
-        (click)="this.substitution.modifySubstitution(frequency.letter)"
-        (mouseenter)="this.onMouseEnter(frequency.letter)"
-        (mouseleave)="this.onMouseLeave(frequency.letter)"
-        *ngFor="let frequency of this.frequencies | async"
-        [class.hovering]="frequency.letter === this.hoverLetter">
-  <div class="bar" [style.height]="(frequency.frequency / this.maxFrequency * 100) + '%'"></div>
+<button
+  class="letter"
+  (click)="this.substitution.modifySubstitution(frequency.letter)"
+  (mouseenter)="this.onMouseEnter(frequency.letter)"
+  (mouseleave)="this.onMouseLeave(frequency.letter)"
+  *ngFor="let frequency of this.frequencies | async"
+  [class.hovering]="frequency.letter === this.hoverLetter"
+>
+  <div class="bar" [style.height]="(frequency.frequency / this.maxFrequency) * 100 + '%'"></div>
   <div class="input">{{ frequency.letter | displayLetter }}</div>
-  <div class="percentage">{{ frequency.frequency | translocoPercent:{maximumFractionDigits: 1} }}</div>
-  <div class="output">{{ this.substitution.getObservable(frequency.letter) | async | displayLetter }}</div>
+  <div class="percentage">
+    {{ frequency.frequency | translocoPercent: { maximumFractionDigits: 1 } }}
+  </div>
+  <div class="output">
+    {{ this.substitution.getObservable(frequency.letter) | async | displayLetter }}
+  </div>
 </button>

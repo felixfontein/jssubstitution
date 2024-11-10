@@ -1,50 +1,50 @@
-import { Component, HostBinding, HostListener, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component, HostBinding, HostListener, Input, OnChanges, OnDestroy, SimpleChanges } from "@angular/core";
 
-import { Observable, Subscription, of } from 'rxjs';
+import { Observable, Subscription, of } from "rxjs";
 
-import { AppStateService } from '../../services/app-state.service';
-import { SubstitutionService } from '../../services/substitution.service';
+import { AppStateService } from "../../services/app-state.service";
+import { SubstitutionService } from "../../services/substitution.service";
 
 @Component({
-  selector: 'app-substitution-letter',
-  templateUrl: './substitution-letter.component.html',
-  styleUrls: ['./substitution-letter.component.scss']
+  selector: "app-substitution-letter",
+  templateUrl: "./substitution-letter.component.html",
+  styleUrls: ["./substitution-letter.component.scss"],
 })
 export class SubstitutionLetterComponent implements OnChanges, OnDestroy {
   @Input()
-  public letter: string = '';
+  public letter: string = "";
 
   @Input()
   public isSubstitutable: boolean = true;
 
-  @HostBinding('class.is-subs')
+  @HostBinding("class.is-subs")
   public get isSubs() {
     return this.isSubstitutable;
   }
 
-  @HostBinding('attr.tabindex')
+  @HostBinding("attr.tabindex")
   public get getTabindex(): string | undefined {
-    return this.isSubstitutable ? '0' : undefined;
+    return this.isSubstitutable ? "0" : undefined;
   }
 
-  @HostBinding('attr.aria-role')
+  @HostBinding("attr.aria-role")
   public get getAriaRole(): string | undefined {
-    return this.isSubstitutable ? 'button' : undefined;
+    return this.isSubstitutable ? "button" : undefined;
   }
 
-  @HostBinding('class.hovering')
+  @HostBinding("class.hovering")
   public hovering: boolean = false;
 
   private hoveringSubs: Subscription;
 
   public translated: Observable<string | undefined>;
 
-  constructor(private readonly substitution: SubstitutionService,
-              private readonly appState: AppStateService) {
+  constructor(
+    private readonly substitution: SubstitutionService,
+    private readonly appState: AppStateService,
+  ) {
     this.translated = new Observable<string | undefined>();
-    this.hoveringSubs = this.substitution.hoverLetter.subscribe(
-      letter => this.hovering = (letter === this.letter)
-    );
+    this.hoveringSubs = this.substitution.hoverLetter.subscribe((letter) => (this.hovering = letter === this.letter));
   }
 
   public ngOnDestroy(): void {
@@ -59,7 +59,7 @@ export class SubstitutionLetterComponent implements OnChanges, OnDestroy {
     }
   }
 
-  @HostListener('click')
+  @HostListener("click")
   onClick(): void {
     this.appState.informUIActivity();
     if (this.isSubstitutable) {
@@ -67,12 +67,12 @@ export class SubstitutionLetterComponent implements OnChanges, OnDestroy {
     }
   }
 
-  @HostListener('mouseenter')
+  @HostListener("mouseenter")
   onMouseOver() {
     this.substitution.hoverStart(this.letter);
   }
 
-  @HostListener('mouseleave')
+  @HostListener("mouseleave")
   onMouseLeave() {
     this.substitution.hoverEnd(this.letter);
   }

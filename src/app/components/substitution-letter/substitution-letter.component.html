@@ -1,2 +1,4 @@
 <div class="input">{{ letter | displayLetter }}</div>
-<div class="output" [class.empty]="(translated | async) === undefined">{{ translated | async | displayLetter }}</div>
+<div class="output" [class.empty]="(translated | async) === undefined">
+  {{ translated | async | displayLetter }}
+</div>

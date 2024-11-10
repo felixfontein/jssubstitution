@@ -1,8 +1,10 @@
 <app-substitution-stats [letters]="(realLetters | async) || []"></app-substitution-stats>
 
 <div class="letters">
-  <app-substitution-letter [letter]="letter[0]"
-                           [isSubstitutable]="letter[1]"
-                           *ngFor="let letter of this.substitutableLetters | async">
+  <app-substitution-letter
+    [letter]="letter[0]"
+    [isSubstitutable]="letter[1]"
+    *ngFor="let letter of this.substitutableLetters | async"
+  >
   </app-substitution-letter>
 </div>

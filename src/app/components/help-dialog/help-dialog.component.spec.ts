@@ -1,30 +1,26 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { HelpData, HelpDialogComponent } from './help-dialog.component';
-import { AppStateService } from '../../services/app-state.service';
-import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
-import { TranslocoRootModule } from '../../transloco-root.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HelpData, HelpDialogComponent } from "./help-dialog.component";
+import { AppStateService } from "../../services/app-state.service";
+import { MAT_DIALOG_DATA, MatDialogModule } from "@angular/material/dialog";
+import { TranslocoRootModule } from "../../transloco-root.module";
+import { HttpClientModule } from "@angular/common/http";
 
 const EMPTY_HELP: HelpData = {
-  title: 'HELP.MAIN.TITLE',
+  title: "HELP.MAIN.TITLE",
   pages: [],
 };
 
-describe('HelpDialogComponent', () => {
+describe("HelpDialogComponent", () => {
   let component: HelpDialogComponent;
   let fixture: ComponentFixture<HelpDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HelpDialogComponent ],
-      providers: [
-        AppStateService,
-        { provide: MAT_DIALOG_DATA, useValue: EMPTY_HELP },
-      ],
-      imports: [ MatDialogModule, TranslocoRootModule, HttpClientModule ],
-    })
-    .compileComponents();
+      declarations: [HelpDialogComponent],
+      providers: [AppStateService, { provide: MAT_DIALOG_DATA, useValue: EMPTY_HELP }],
+      imports: [MatDialogModule, TranslocoRootModule, HttpClientModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -33,7 +29,7 @@ describe('HelpDialogComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

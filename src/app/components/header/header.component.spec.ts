@@ -1,21 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { HeaderComponent } from './header.component';
-import { TranslocoRootModule } from '../../transloco-root.module';
-import { HttpClientModule } from '@angular/common/http';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDialogModule } from '@angular/material/dialog';
+import { HeaderComponent } from "./header.component";
+import { TranslocoRootModule } from "../../transloco-root.module";
+import { HttpClientModule } from "@angular/common/http";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatDialogModule } from "@angular/material/dialog";
 
-describe('HeaderComponent', () => {
+describe("HeaderComponent", () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ],
-      imports: [ MatDialogModule, MatMenuModule, TranslocoRootModule, HttpClientModule ],
-    })
-    .compileComponents();
+      declarations: [HeaderComponent],
+      imports: [MatDialogModule, MatMenuModule, TranslocoRootModule, HttpClientModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -24,7 +23,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

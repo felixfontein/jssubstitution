@@ -1,19 +1,17 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { AppStateService } from '../../app/services/app-state.service';
-import { SubstitutionService } from '../../app/services/substitution.service';
-
+import { AppStateService } from "../../app/services/app-state.service";
+import { SubstitutionService } from "../../app/services/substitution.service";
 
 @Component({
-  selector: 'app-view-text-dialog',
-  templateUrl: './view-text-dialog.component.html',
-  styleUrls: ['./view-text-dialog.component.scss']
+  selector: "app-view-text-dialog",
+  templateUrl: "./view-text-dialog.component.html",
+  styleUrls: ["./view-text-dialog.component.scss"],
 })
 export class ViewTextDialogComponent {
   public readonly letters: [string | undefined, boolean][];
 
-  constructor(appState: AppStateService,
-              substitution: SubstitutionService) {
+  constructor(appState: AppStateService, substitution: SubstitutionService) {
     this.letters = [];
     const subs = substitution.getCurrent();
     let isQuoted = false;

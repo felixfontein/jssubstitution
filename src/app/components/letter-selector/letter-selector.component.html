@@ -2,24 +2,28 @@
 
 <div class="content">
   <div class="title">
-    {{ 'SELECT_REPLACEMENT' | transloco:{letter: this.letter} }}
+    {{ "SELECT_REPLACEMENT" | transloco: { letter: this.letter } }}
   </div>
   <div class="letters">
-    <button *ngFor="let letter of letters"
-            [class.primary]="letter === this.currentLetter"
-            [class.secondary]="letter !== this.currentLetter"
-            [class.used]="isInUse(letter) | async"
-            [disabled]="isInUse(letter) | async"
-            [mat-dialog-close]
-            (click)="selectLetter(letter)">
+    <button
+      *ngFor="let letter of letters"
+      [class.primary]="letter === this.currentLetter"
+      [class.secondary]="letter !== this.currentLetter"
+      [class.used]="isInUse(letter) | async"
+      [disabled]="isInUse(letter) | async"
+      [mat-dialog-close]
+      (click)="selectLetter(letter)"
+    >
       <ng-container *ngIf="letter !== undefined">{{ letter | displayLetter }}</ng-container>
       <ng-container *ngIf="letter === undefined">
-        {{ (letter === this.currentLetter ? 'NO_ASSIGNMENT' : 'REMOVE_ASSIGNMENT') | transloco }}
+        {{ (letter === this.currentLetter ? "NO_ASSIGNMENT" : "REMOVE_ASSIGNMENT") | transloco }}
       </ng-container>
     </button>
   </div>
   <div class="legend" [innerHTML]="'RED_LETTER_LEGEND' | transloco"></div>
 </div>
 <div class="bottom">
-  <button class="secondary" [mat-dialog-close] cdkFocusInitial>{{ 'CANCEL' | transloco }}</button>
+  <button class="secondary" [mat-dialog-close] cdkFocusInitial>
+    {{ "CANCEL" | transloco }}
+  </button>
 </div>

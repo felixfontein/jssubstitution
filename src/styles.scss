@@ -1,16 +1,17 @@
-
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 * {
   box-sizing: content-box;
 }
 
 // The Angular Material design menu doesn't ike content-box...
-.mat-menu-content, .mat-menu-content * {
+.mat-menu-content,
+.mat-menu-content * {
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -21,8 +22,12 @@ button {
   background: none;
   outline: none;
   font: unset;
-  &:focus { outline: none; }
-  &::-moz-focus-inner { border: 0; }
+  &:focus {
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
 }
 
 mat-dialog-container {
@@ -64,12 +69,15 @@ mat-dialog-container {
 }
 
 button {
-  &.primary, &.secondary, &.close {
+  &.primary,
+  &.secondary,
+  &.close {
     border: 0.2em solid transparent;
 
     cursor: pointer;
 
-    &:focus, &:active {
+    &:focus,
+    &:active {
       border-color: black;
     }
   }
@@ -88,7 +96,8 @@ button {
     background-color: white;
     border-color: black;
 
-    &:focus, &:active {
+    &:focus,
+    &:active {
       outline: black;
     }
 
@@ -119,7 +128,8 @@ button {
     background-color: white;
     border-color: black;
 
-    &:focus, &:active {
+    &:focus,
+    &:active {
       outline: black;
     }
 

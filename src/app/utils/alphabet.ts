@@ -1,4 +1,3 @@
-
 function createSet(letters: ReadonlyArray<string>): Set<string> {
   const letterSet = new Set<string>();
   for (const letter of letters) {
@@ -21,7 +20,7 @@ export class Alphabet {
     this.letters = letters.slice(0);
     this.letterSet = createSet(this.letters);
 
-    others = others ?? []
+    others = others ?? [];
     if (!(others instanceof Array)) {
       others = Array.from(others);
     }
@@ -61,9 +60,8 @@ export class Alphabet {
     if (acceptOther && this.otherSet.has(lower)) {
       return lower;
     }
-    return '';
+    return "";
   }
 }
-
 
 export const EMPTY_ALPHABET = new Alphabet([]);

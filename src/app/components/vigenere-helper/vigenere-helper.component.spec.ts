@@ -1,20 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { VigenereHelperComponent } from './vigenere-helper.component';
-import { HttpClientModule } from '@angular/common/http';
-import { TranslocoRootModule } from '../../transloco-root.module';
-import { FormsModule } from '@angular/forms';
+import { VigenereHelperComponent } from "./vigenere-helper.component";
+import { HttpClientModule } from "@angular/common/http";
+import { TranslocoRootModule } from "../../transloco-root.module";
+import { FormsModule } from "@angular/forms";
 
-describe('VigenereHelperComponent', () => {
+describe("VigenereHelperComponent", () => {
   let component: VigenereHelperComponent;
   let fixture: ComponentFixture<VigenereHelperComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VigenereHelperComponent ],
-      imports: [ FormsModule, HttpClientModule, TranslocoRootModule ],
-    })
-    .compileComponents();
+      declarations: [VigenereHelperComponent],
+      imports: [FormsModule, HttpClientModule, TranslocoRootModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -23,7 +22,7 @@ describe('VigenereHelperComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

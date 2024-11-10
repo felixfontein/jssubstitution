@@ -4,7 +4,8 @@
   }
 }
 
-.source, .destination {
+.source,
+.destination {
   border: 0.1em solid white;
   padding: 0.5em;
 
@@ -88,7 +89,9 @@
       border: 0;
     }
 
-    &:hover, &:focus, &:focus-visible {
+    &:hover,
+    &:focus,
+    &:focus-visible {
       background-color: black;
       outline: none;
     }

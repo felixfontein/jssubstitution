@@ -17,8 +17,7 @@
   <app-header aria-role="menubar" *ngIf="appState.showHeader"></app-header>
   <div class="content" aria-role="main">
     <div class="content-inside" #mainViewD>
-      <app-substitution [text]="appState.text">
-      </app-substitution>
+      <app-substitution [text]="appState.text"> </app-substitution>
     </div>
   </div>
   <app-help-button [data]="this.mainHelp"></app-help-button>

@@ -1,9 +1,8 @@
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject } from "@angular/core";
+import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 
-import { AppStateService } from '../../services/app-state.service';
-import { BaseActivityReporterComponent } from '../base-activity-reporter.component';
-
+import { AppStateService } from "../../services/app-state.service";
+import { BaseActivityReporterComponent } from "../base-activity-reporter.component";
 
 export type TranslationKey = string;
 
@@ -18,11 +17,10 @@ export interface HelpData {
   showLicenses?: () => void;
 }
 
-
 @Component({
-  selector: 'app-help-dialog',
-  templateUrl: './help-dialog.component.html',
-  styleUrls: ['./help-dialog.component.scss']
+  selector: "app-help-dialog",
+  templateUrl: "./help-dialog.component.html",
+  styleUrls: ["./help-dialog.component.scss"],
 })
 export class HelpDialogComponent extends BaseActivityReporterComponent {
   public page: number;
@@ -35,8 +33,10 @@ export class HelpDialogComponent extends BaseActivityReporterComponent {
     return this.page + 1 < this.params.pages.length;
   }
 
-  constructor(@Inject(MAT_DIALOG_DATA) public readonly params: HelpData,
-              private readonly appState: AppStateService) {
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public readonly params: HelpData,
+    private readonly appState: AppStateService,
+  ) {
     super(appState);
     this.page = 0;
   }

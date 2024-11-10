@@ -1,17 +1,17 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from "@angular/core";
 
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from "rxjs";
 
-import { SubstitutionService } from '../../services/substitution.service';
+import { SubstitutionService } from "../../services/substitution.service";
 
 @Component({
-  selector: 'app-substitution',
-  templateUrl: './substitution.component.html',
-  styleUrls: ['./substitution.component.scss']
+  selector: "app-substitution",
+  templateUrl: "./substitution.component.html",
+  styleUrls: ["./substitution.component.scss"],
 })
 export class SubstitutionComponent implements OnInit, OnDestroy, OnChanges {
   @Input()
-  public text = '';
+  public text = "";
 
   private readonly unsub: Subscription[];
 
@@ -28,28 +28,30 @@ export class SubstitutionComponent implements OnInit, OnDestroy, OnChanges {
 
   constructor(public readonly substitution: SubstitutionService) {
     this.unsub = [];
-    this.text$ = new BehaviorSubject<string>('');
+    this.text$ = new BehaviorSubject<string>("");
     this.letters$ = new BehaviorSubject<string[]>([]);
     this.realLetters$ = new BehaviorSubject<string[]>([]);
     this.substitutableLetters$ = new BehaviorSubject<[string, boolean][]>([]);
     this.letters = this.letters$.asObservable();
     this.realLetters = this.realLetters$.asObservable();
     this.substitutableLetters = this.substitutableLetters$.asObservable();
-    this.unsub.push(this.text$.subscribe(text => {
-      if (this.subs) {
-        this.subs.unsubscribe();
-      }
-      this.subs = substitution.getSplitObservable(text).subscribe(letters => {
-        this.letters$.next(letters);
-        const alphabet = this.substitution.getCurrent().alphabet;
-        this.realLetters$.next(letters.filter(l => alphabet.letterSet.has(l)));
-        const subsLetters: [string, boolean][] = [];
-        letters.forEach(l => {
-          subsLetters.push([l, alphabet.letterSet.has(l)]);
+    this.unsub.push(
+      this.text$.subscribe((text) => {
+        if (this.subs) {
+          this.subs.unsubscribe();
+        }
+        this.subs = substitution.getSplitObservable(text).subscribe((letters) => {
+          this.letters$.next(letters);
+          const alphabet = this.substitution.getCurrent().alphabet;
+          this.realLetters$.next(letters.filter((l) => alphabet.letterSet.has(l)));
+          const subsLetters: [string, boolean][] = [];
+          letters.forEach((l) => {
+            subsLetters.push([l, alphabet.letterSet.has(l)]);
+          });
+          this.substitutableLetters$.next(subsLetters);
         });
-        this.substitutableLetters$.next(subsLetters);
-      });
-    }));
+      }),
+    );
   }
 
   public ngOnInit(): void {
@@ -60,7 +62,7 @@ export class SubstitutionComponent implements OnInit, OnDestroy, OnChanges {
     if (this.subs) {
       this.subs.unsubscribe();
     }
-    this.unsub.forEach(unsub => unsub.unsubscribe());
+    this.unsub.forEach((unsub) => unsub.unsubscribe());
   }
 
   public ngOnChanges(changes: SimpleChanges): void {

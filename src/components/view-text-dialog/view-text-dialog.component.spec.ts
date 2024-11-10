@@ -1,22 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ViewTextDialogComponent } from './view-text-dialog.component';
-import { AppStateService } from '../../app/services/app-state.service';
-import { MatDialogModule } from '@angular/material/dialog';
-import { TranslocoRootModule } from '../../app/transloco-root.module';
-import { HttpClientModule } from '@angular/common/http';
+import { ViewTextDialogComponent } from "./view-text-dialog.component";
+import { AppStateService } from "../../app/services/app-state.service";
+import { MatDialogModule } from "@angular/material/dialog";
+import { TranslocoRootModule } from "../../app/transloco-root.module";
+import { HttpClientModule } from "@angular/common/http";
 
-describe('ViewTextDialogComponent', () => {
+describe("ViewTextDialogComponent", () => {
   let component: ViewTextDialogComponent;
   let fixture: ComponentFixture<ViewTextDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewTextDialogComponent ],
-      providers: [ AppStateService ],
-      imports: [ MatDialogModule, TranslocoRootModule, HttpClientModule ],
-    })
-    .compileComponents();
+      declarations: [ViewTextDialogComponent],
+      providers: [AppStateService],
+      imports: [MatDialogModule, TranslocoRootModule, HttpClientModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -25,7 +24,7 @@ describe('ViewTextDialogComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

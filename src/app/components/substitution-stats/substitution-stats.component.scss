@@ -14,16 +14,18 @@
   padding: 0;
 
   &.hovering {
-    border-color: #00F;
+    border-color: #00f;
     outline: none;
-    background-color: #EEF;
+    background-color: #eef;
 
     .bar {
-      background-color: #BBF;
+      background-color: #bbf;
     }
 
-    .input, .output, .percentage {
-      color: #00F;
+    .input,
+    .output,
+    .percentage {
+      color: #00f;
     }
   }
 
@@ -33,10 +35,12 @@
     right: 0;
     bottom: 0;
 
-    background-color: #BBB;
+    background-color: #bbb;
   }
 
-  .input, .output, .percentage {
+  .input,
+  .output,
+  .percentage {
     text-align: center;
 
     z-index: 1;

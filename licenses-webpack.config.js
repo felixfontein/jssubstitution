@@ -10,7 +10,7 @@ module.exports = {
       filter: /(^.*[/\\]node_modules[/\\]((?:@[^/\\]+[/\\])?(?:[^@/\\][^/\\]*)))/,
       emitError: true,
       outputWriter: path.resolve(__dirname, "licenses-template.ejs"),
-      outputFilename: "licenses.json"
-    })
-  ]
+      outputFilename: "licenses.json",
+    }),
+  ],
 };
