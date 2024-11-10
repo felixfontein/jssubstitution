@@ -52,6 +52,9 @@ export class SubstitutionService {
   private readonly substitution$: BehaviorSubject<Substitution>;
   public readonly substitution: Observable<Substitution>;
 
+  private readonly hoverLetter$: BehaviorSubject<string | undefined>;
+  public readonly hoverLetter: Observable<string | undefined>;
+
   private readonly letters: Map<string, LetterData>;
   private readonly splitters: Map<string, SplitData>;
 
@@ -61,6 +64,9 @@ export class SubstitutionService {
     this.letters = new Map<string, LetterData>();
     this.splitters = new Map<string, SplitData>();
     this.substitution$.subscribe(subs => this.updateSubstitution(subs));
+    this.hoverLetter$ = new BehaviorSubject<string | undefined>(undefined);
+    this.hoverLetter = this.hoverLetter$.asObservable();
+    this.hoverLetter.subscribe(letter => console.log('hover', letter));
   }
 
   private updateSubstitution(subs: Substitution): void {
@@ -116,5 +122,18 @@ export class SubstitutionService {
 
   public getCurrent(): Substitution {
     return this.substitution$.getValue();
+  }
+
+  public hoverStart(letter: string): void {
+    const newLetter = this.substitution$.getValue().lettersMap.has(letter) ? letter : undefined;
+    if (this.hoverLetter$.getValue() !== newLetter) {
+      this.hoverLetter$.next(newLetter);
+    }
+  }
+
+  public hoverEnd(letter: string): void {
+    if (this.hoverLetter$.getValue() === letter) {
+      this.hoverLetter$.next(undefined);
+    }
   }
 }

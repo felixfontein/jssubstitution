@@ -1,6 +1,6 @@
-import { Component, HostBinding, HostListener, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, HostBinding, HostListener, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { Observable, Subscription, of } from 'rxjs';
 
 import { AppStateService } from '../../services/app-state.service';
 import { SubstitutionService } from '../../services/substitution.service';
@@ -10,7 +10,7 @@ import { SubstitutionService } from '../../services/substitution.service';
   templateUrl: './substitution-letter.component.html',
   styleUrls: ['./substitution-letter.component.scss']
 })
-export class SubstitutionLetterComponent implements OnChanges {
+export class SubstitutionLetterComponent implements OnChanges, OnDestroy {
   @Input()
   public letter: string = '';
 
@@ -32,11 +32,23 @@ export class SubstitutionLetterComponent implements OnChanges {
     return this.isSubstitutable ? 'button' : undefined;
   }
 
+  @HostBinding('class.hovering')
+  public hovering: boolean = false;
+
+  private hoveringSubs: Subscription;
+
   public translated: Observable<string | undefined>;
 
   constructor(private readonly substitution: SubstitutionService,
               private readonly appState: AppStateService) {
     this.translated = new Observable<string | undefined>();
+    this.hoveringSubs = this.substitution.hoverLetter.subscribe(
+      letter => this.hovering = (letter === this.letter)
+    );
+  }
+
+  public ngOnDestroy(): void {
+    this.hoveringSubs.unsubscribe();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -53,5 +65,15 @@ export class SubstitutionLetterComponent implements OnChanges {
     if (this.isSubstitutable) {
       this.substitution.modifySubstitution(this.letter);
     }
+  }
+
+  @HostListener('mouseenter')
+  onMouseOver() {
+    this.substitution.hoverStart(this.letter);
+  }
+
+  @HostListener('mouseleave')
+  onMouseLeave() {
+    this.substitution.hoverEnd(this.letter);
   }
 }

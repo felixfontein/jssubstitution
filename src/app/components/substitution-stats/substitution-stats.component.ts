@@ -27,9 +27,12 @@ export class SubstitutionStatsComponent implements OnChanges {
 
   public maxFrequency: number = 1;
 
+  public hoverLetter: string | undefined;
+
   constructor(public readonly substitution: SubstitutionService) {
     this.frequencies$ = new BehaviorSubject<LetterCount[]>([]);
     this.frequencies = this.frequencies$.asObservable();
+    this.substitution.hoverLetter.subscribe(letter => this.hoverLetter = letter);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -45,4 +48,11 @@ export class SubstitutionStatsComponent implements OnChanges {
     this.frequencies$.next(frequencies);
   }
 
+  onMouseEnter(letter: string) {
+    this.substitution.hoverStart(letter);
+  }
+
+  onMouseLeave(letter: string) {
+    this.substitution.hoverEnd(letter);
+  }
 }
